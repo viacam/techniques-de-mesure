@@ -1,0 +1,21 @@
+m=2
+s=1
+x=intx(1000,-10,10)+m
+g=1.d/(s*sqrt(2*!dpi))*exp(-(x-m)^2/2/s^2)
+hardcopy,/open,filename='loiGaussienne.ps',bits=2
+plot,x,g,xrange=[-2,6],xthick=4,ythick=4,thick=4,charsize=2,charthick=4,$
+xtitle='x',ytitle=textoidl('g(x)')
+oplot,[0,0],[0,max(g)],thick=4
+oplot,[1,1]*(m-s),[0,max(g)],line=1,thick=4
+oplot,[1,1]*(m+s),[0,max(g)],line=1,thick=4
+lmh=2.35*s
+oplot,[1,1]*(m-lmh/2),[0,max(g)],line=1,thick=4
+oplot,[1,1]*(m+lmh/2),[0,max(g)],line=1,thick=4
+oplot,[m-lmh/2,m+lmh/2],[1,1]*max(g)/2,thick=4
+oplot,[m-s,m+s],[1,1]*exp(-0.5)*max(g),thick=4
+xyouts,2,0.21,textoidl('2.35\sigma'),charsize=2,charthick=4,align=0.5
+xyouts,2,exp(-0.5)*max(g)+0.01,textoidl('2\sigma'),charsize=2,charthick=4,align=0.5
+xyouts,2,0.1,textoidl('\mu=2'),charsize=2,charthick=4,align=0.5
+xyouts,2,0.07,textoidl('\sigma=1'),charsize=2,charthick=4,align=0.5
+hardcopy,/close
+$open loiGaussienne.ps

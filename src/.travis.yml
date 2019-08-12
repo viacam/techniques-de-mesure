@@ -6,4 +6,4 @@ before_install:
   - docker pull nowox/latex:1.1
 
 script:
-  - make
+  - makegit

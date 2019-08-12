@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Généré par Microsoft Visio, SVG Export acquisition-de-données.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="7.28621in" height="1.98679in"
+		viewBox="0 0 524.607 143.049" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="1036" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvSubprocessMaster" v:prompt="" v:val="VT4(Rectangle)"/>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.833336em}
+		.st3 {font-size:1em}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Page 1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(18.375,-18.375)">
+			<title>Rectangle</title>
+			<desc>Objet à mesurer</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="89.8996" width="113.39" height="106.299"/>
+			<rect x="0" y="36.75" width="113.386" height="106.299" class="st1"/>
+			<text x="23.7" y="92.9" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Objet à mesurer</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(205.611,-82.1545)">
+			<title>Rectangle.2</title>
+			<desc>Chaîne de mesure</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="121.789" width="113.39" height="42.5197"/>
+			<rect x="0" y="100.53" width="113.386" height="42.5197" class="st1"/>
+			<text x="20.07" y="124.79" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Chaîne de mesure</text>		</g>
+		<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(205.611,-18.375)">
+			<title>Rectangle.3</title>
+			<desc>Chaîne d’action</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="121.789" width="113.39" height="42.5197"/>
+			<rect x="0" y="100.53" width="113.386" height="42.5197" class="st1"/>
+			<text x="25.14" y="124.79" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Chaîne d’action</text>		</g>
+		<g id="shape4-10" v:mID="4" v:groupContext="shape" transform="translate(392.847,-18.375)">
+			<title>Rectangle.4</title>
+			<desc>Unité de traitement (ordinateur)</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="89.8996" width="113.39" height="106.299"/>
+			<rect x="0" y="36.75" width="113.386" height="106.299" class="st1"/>
+			<text x="16.26" y="86.9" class="st2" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Unité de traitement<v:newlineChar/><tspan
+						x="31.95" dy="1.2em" class="st3">(</tspan>ordinateur)</text>		</g>
+		<g id="shape5-14" v:mID="5" v:groupContext="shape" transform="translate(205.611,182.684) rotate(180)">
+			<title>Flèche simple</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ArrowType" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<path d="M0 143.05 L11.34 131.71 L11.34 137.38 L73.7 137.38 L73.7 143.05 L73.7 148.72 L11.34 148.72 L11.34 154.39 L0
+						 143.05 Z" class="st1"/>
+		</g>
+		<g id="shape6-16" v:mID="6" v:groupContext="shape" transform="translate(392.697,182.684) rotate(180)">
+			<title>Flèche simple.6</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ArrowType" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<path d="M0 143.05 L11.34 131.71 L11.34 137.38 L73.7 137.38 L73.7 143.05 L73.7 148.72 L11.34 148.72 L11.34 154.39 L0
+						 143.05 Z" class="st1"/>
+		</g>
+		<g id="shape7-18" v:mID="7" v:groupContext="shape" transform="translate(318.997,-39.6348)">
+			<title>Flèche simple.7</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ArrowType" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<path d="M0 143.05 L11.34 131.71 L11.34 137.38 L73.7 137.38 L73.7 143.05 L73.7 148.72 L11.34 148.72 L11.34 154.39 L0
+						 143.05 Z" class="st1"/>
+		</g>
+		<g id="shape8-20" v:mID="8" v:groupContext="shape" transform="translate(131.91,-39.6348)">
+			<title>Flèche simple.8</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="ArrowType" v:prompt="" v:val="VT0(2):26"/>
+			</v:userDefs>
+			<path d="M0 143.05 L11.34 131.71 L11.34 137.38 L73.7 137.38 L73.7 143.05 L73.7 148.72 L11.34 148.72 L11.34 154.39 L0
+						 143.05 Z" class="st1"/>
+		</g>
+	</g>
+</svg>

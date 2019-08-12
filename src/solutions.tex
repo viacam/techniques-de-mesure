@@ -1,28 +1,30 @@
-%----------
+\newcommand{\dd}{\ensuremath{\text{d}}}
+
 \section{Solutions des exercices du chapitre 6}
-%----------
 
 \subsection*{Solution exercice 6.1 - qualité de l'usinage de lentilles optiques}
 
-\begin{wrapfigure}[20]{l}[0pt]{6.7cm}
-   \centering
-   \includegraphics[width=6.5cm]{fig/Serie1_exe1_cumulativeDisribution.pdf}
-   \caption{Proportion de lentilles ayant une erreur sur la focale inférieure ou égale à la valeur indiquée en abscisse.}
-   \label{fig:01}
-\end{wrapfigure}
+% TODO: Missing figure
+% \begin{wrapfigure}[20]{l}[0pt]{6.7cm}
+%    \centering
+%    \includegraphics[width=6.5cm]{fig/Serie1_exe1_cumulativeDisribution.pdf}
+%    \caption{Proportion de lentilles ayant une erreur sur la focale inférieure ou égale à la valeur indiquée en abscisse.}
+%    \label{fig:01}
+% \end{wrapfigure}
+
 On charge les données dans \texttt{matlab} avec la commande \texttt{load} - consultez le \textit{user manual} pour toute question relative à l'utilisation de \texttt{matlab}. En tant que futurs ingénieurs, vous devez êtres capable de vous débrouiller seuls avec un logiciel en lisant le manuel de l'utilisateur.
 
-\textbf{Q1~:} Il suffit de calculer le nombre de fois que la donnée est dans l'intervalle 98-102 mm, par rapport au nombre total de données; on trouve qu'il y a 675 cas sur 1000 soit 67.5\% des lentilles qui sont acceptables;
+\textbf{Q1:} Il suffit de calculer le nombre de fois que la donnée est dans l'intervalle 98-102 mm, par rapport au nombre total de données; on trouve qu'il y a 675 cas sur 1000 soit 67.5\% des lentilles qui sont acceptables;
 
 Pour savoir quelle est l'erreur d'usinage si on accepte 90\% des lentilles, il suffit de construire l'histogramme cumulé, jusqu'à l'erreur maximale, ce qui donne la courbe de la figure~\ref{fig:01}, puis on cherche par tâtonnement la valeur correspondant à 90\% du maximum de l'histogramme cumulé, soit 3.34 mm. Par conséquent, si on accepte une erreur de 3.34 mm sur la focale, alors jusqu'à 90\% des lentilles sont acceptables.
 
-\textbf{Q2~:} $\langle R\rangle=49.991$ mm, $\text{med}(R)=49.987$ mm, $\text{mode}(R)=49.95$ mm, $\sigma_R=1.029$ mm; on remarque que les trois valeurs de la moyenne, de la médiane et du mode sont très proches les unes des autres, on doit donc s'attendre à un histogramme très symétrique autour de la moyenne.
+\textbf{Q2:} $\langle R\rangle=49.991$ mm, $\text{med}(R)=49.987$ mm, $\text{mode}(R)=49.95$ mm, $\sigma_R=1.029$ mm; on remarque que les trois valeurs de la moyenne, de la médiane et du mode sont très proches les unes des autres, on doit donc s'attendre à un histogramme très symétrique autour de la moyenne.
 
-\textbf{Q3 et Q4~:} On trouve $\beta_1=-0.0426758$ et $\gamma_2=-0.265687$; l'histogramme est par conséquent très symétrique, et très légèrement plus étroit qu'une gaussienne pure.
+\textbf{Q3 et Q4:} On trouve $\beta_1=-0.0426758$ et $\gamma_2=-0.265687$; l'histogramme est par conséquent très symétrique, et très légèrement plus étroit qu'une gaussienne pure.
 
-\textbf{Q5~:} Pour construire la tableau des fréquences, il n'y a rien d'autre à faire que de compter le nombre de cas dans chaque classe, en fonction du nombre de classes. L'intervalle entre le maximum (52.9633 mm) et le minimum (46.5538 mm) de $R$ est de 6.4095 mm, par conséquent, pour respectivement 5, 10, 20 et 40 classes, les largeurs de classe $\Delta R$ sont 1.28190 mm, 0.640950 mm, 0.320475 mm et 0.160238 mm. En triant, on arrive aux tableaux de fréquences donnés en table~\ref{tab:cl}, et aux histogrammes de la fig.~\ref{fig:hist}.
+\textbf{Q5:} Pour construire la tableau des fréquences, il n'y a rien d'autre à faire que de compter le nombre de cas dans chaque classe, en fonction du nombre de classes. L'intervalle entre le maximum (52.9633 mm) et le minimum (46.5538 mm) de $R$ est de 6.4095 mm, par conséquent, pour respectivement 5, 10, 20 et 40 classes, les largeurs de classe $\Delta R$ sont 1.28190 mm, 0.640950 mm, 0.320475 mm et 0.160238 mm. En triant, on arrive aux tableaux de fréquences donnés en table~\ref{tab:cl}, et aux histogrammes de la fig.~\ref{fig:hist}.
 
-\textbf{Q6 et Q7~:} Il est clair que l'histogramme à 20 classes est celui qui véhicule le mieux la structure de la distribution, pratiquement une gaussienne, sans alourdir le graphique avec trop de données. L'histogramme à 10 classes pourrait encore convenir, mais 5 classes, c'est clairement trop peu. Par ailleurs, si votre collègue trouve une réponse légèrement différente de la votre, c'est parce que calculer des métriques à partir d'un histogramme est toujours une approximation - à moins que l'histogramme ne soit construit à partir d'une infinité de mesures - ce qui n'est jamais le cas.
+\textbf{Q6 et Q7:} Il est clair que l'histogramme à 20 classes est celui qui véhicule le mieux la structure de la distribution, pratiquement une gaussienne, sans alourdir le graphique avec trop de données. L'histogramme à 10 classes pourrait encore convenir, mais 5 classes, c'est clairement trop peu. Par ailleurs, si votre collègue trouve une réponse légèrement différente de la votre, c'est parce que calculer des métriques à partir d'un histogramme est toujours une approximation - à moins que l'histogramme ne soit construit à partir d'une infinité de mesures - ce qui n'est jamais le cas.
 
 \begin{table}[p]
 \footnotesize
@@ -77,15 +79,16 @@ Pour savoir quelle est l'erreur d'usinage si on accepte 90\% des lentilles, il s
 \normalsize
 \end{table}
 
-\begin{figure}[p]
-   \centering
-   \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme05classe.pdf} \hspace{5mm}
-   \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme10classe.pdf} \\ \vspace{5mm}
-   \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme20classe.pdf} \hspace{5mm}
-   \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme40classe.pdf}
-   \caption{De gauche à droite et de haut en bas, histogrammes pour 5, 10, 20 et 40 classes.}
-   \label{fig:hist}
-\end{figure}
+% TODO: Missing figures
+% \begin{figure}[p]
+%    \centering
+%    \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme05classe.pdf} \hspace{5mm}
+%    \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme10classe.pdf} \\ \vspace{5mm}
+%    \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme20classe.pdf} \hspace{5mm}
+%    \includegraphics[width=7cm]{fig/Serie1_exe1_histogramme40classe.pdf}
+%    \caption{De gauche à droite et de haut en bas, histogrammes pour 5, 10, 20 et 40 classes.}
+%    \label{fig:hist}
+% \end{figure}
 
 \newpage
 
@@ -96,7 +99,7 @@ Pour savoir quelle est l'erreur d'usinage si on accepte 90\% des lentilles, il s
 \item On trouve $\beta_1=1.09$ et $\gamma_2=0.4$
 \item Une asymétrie positive indique un histogramme de valeurs avec un étirement sur la droite de la moyenne, et pour un aplatissement positif, on a un histogramme plus pointu, c'est-à-dire assez peu étalé; cependant, selon le nombre d'éléments que l'on aura dans notre échantillon (ici 50, ce qui est assez peu), et aussi selon la largeur de la classe choisie pour représenter l'échantillon, l'aplatissement (ou son inverse) ne sera pas forcément très apparent. Ces deux paramètres, $\beta_1$ et $\gamma_2$, sont de fait à prendre comme des indicateurs généraux de la structure de l'histogramme, et non pas comme des vérités absolues. Disons que plus la taille de l'échantillon sera grande, meilleur sera le pronostic donné par ces deux paramètres.
 \item les tables de fréquences et les histogrammes sont donnés ci-dessous.
-\begin{table}[htdp]
+\begin{table}
 \caption{Classe de largeur 300, 22 intervalles --- \textbf{unités mm}}
 \begin{center}
 \begin{tabular}{cccccc}
@@ -132,7 +135,7 @@ inter. &  & centrale & dans la classe & d'occurrence \% & cumulée \%\\\hline
 \end{table}
 \vspace{1.5cm}
 
-\begin{table}[htdp]
+\begin{table}[ht]
 \caption{Classe de largeur 1200, 6 intervalles --- \textbf{unités mm}}
 \begin{center}
 \begin{tabular}{cccccc}
@@ -151,7 +154,7 @@ inter. &  & centrale & dans la classe & d'occurrence \% & cumulée \%\\\hline
 \label{tab:02}
 \end{table}
 
-\begin{table}[htdp]
+\begin{table}[ht]
 \caption{Classe de largeur 3000, 3 intervalles --- \textbf{unités mm}}
 \begin{center}
 \begin{tabular}{cccccc}
@@ -169,7 +172,7 @@ inter. &  & centrale & dans la classe & d'occurrence \% & cumulée \%\\\hline
 
 \newpage
 On remarquera que les classes sont incrémentées à partir de la valeur minimale de l'échantillon, à savoir ici 41 mm, et non à partir de 0.
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+\begin{figure}[ht] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[height=56mm]{fig/Serie1_exe2_histogramClasse0300.pdf}
    \includegraphics[height=56mm]{fig/Serie1_exe2_histogramClasse1200.pdf}
@@ -211,9 +214,9 @@ Quant au mode, c'est très simple, c'est la valeur la plus fréquente (pour cett
 
 \subsection*{Solution exercice 6.3 - pression atmosphérique martienne, Gusev crater}
 
-\textbf{Q1~:} il faut 102 (ou moins) classes pour obtenir au moins 10 mesures dans la classe la plus peuplée, mais en fait, avec 102 classes, l'histogramme est assez chahuté et assez peu représentatif; il vaudrait mieux prendre moins de classes.
+\textbf{Q1:} il faut 102 (ou moins) classes pour obtenir au moins 10 mesures dans la classe la plus peuplée, mais en fait, avec 102 classes, l'histogramme est assez chahuté et assez peu représentatif; il vaudrait mieux prendre moins de classes.
 
-\textbf{Q2, Q3~:} Si nous conservons néanmoins 102 classes, alors les fréquences cumulées, données par la somme des fréquences dans toutes les classes inférieures à la classe $i$, selon
+\textbf{Q2, Q3:} Si nous conservons néanmoins 102 classes, alors les fréquences cumulées, données par la somme des fréquences dans toutes les classes inférieures à la classe $i$, selon
 $$
 F_k=\sum\limits_{j=1}^{k}\,f_j
 $$
@@ -245,11 +248,9 @@ $k$ & $F_k$ & $k$ & $F_k$ & $k$ & $F_k$ & $k$ & $F_k$ & $k$ & $F_k$ & $k$ & $F_k
    \caption{Histogramme cumulé.}
    \label{fig:ch}
 \end{wrapfigure}
-\textbf{Q4~:} Il suffit de compter le nombre de mesures qui se trouvent égales ou supérieures à 890 Pa. On trouve que durant 174 sols sur 275 (1 sol = 1 jour martien = 24 h 40 min terrestres), l'eau aurait pu être liquide au fond du cratère Gusev. Les probabilités d'obtenir des conditions favorables à la vie sont donc de $174/275=63\%$.
+\textbf{Q4:} Il suffit de compter le nombre de mesures qui se trouvent égales ou supérieures à 890 Pa. On trouve que durant 174 sols sur 275 (1 sol = 1 jour martien = 24 h 40 min terrestres), l'eau aurait pu être liquide au fond du cratère Gusev. Les probabilités d'obtenir des conditions favorables à la vie sont donc de $174/275=63\%$.
 
-%----------
 \section{Solutions des exercices du chapitre 7}
-%----------
 
 \subsection*{Solution de l'exercice 7.1}
 
@@ -511,9 +512,7 @@ On trouve $2\Delta\mu=2\cdots0.005/100=10^{-4}$ mm.
 
 On a $\Delta\mu=0.001/3=3.\overline{3}\cdots10^{-4}$ mm, d'où $\sqrt{N}=0.005/3.\overline{3}\cdots10^{-4}=15$ et $N=225$.
 
-%----------
 \section{Solutions des exercices du chapitre 8}
-%----------
 
 %..........
 \subsection*{Solution de l'exercice 8.1}
@@ -707,9 +706,7 @@ L'application aux fonctions ci-dessus donne
 \left|\frac{\Delta f_5}{f_5}\right|=\sqrt{9\frac{(\Delta x)^2}{x^2}+4\frac{(\Delta y)}{y^2}}
 \end{gather*}
 
-%----------
 \section{Solutions des exercices du chapitre 9}
-%----------
 
 %..........
 \subsection*{Solution de l'exercice 9.1}

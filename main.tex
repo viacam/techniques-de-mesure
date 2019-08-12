@@ -1,22 +1,84 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[11pt]{book}
+\usepackage[a4paper, margin=2.5cm]{geometry}
 
-\input{src/headers.tex}
+\usepackage[hidelinks]{hyperref}
+\usepackage[french]{babel}
+\usepackage{rotating}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{enumerate}
+
+% Theorems and definitions
+\usepackage{amsthm}
+\usepackage[framemethod=tikz]{mdframed}
+
+
+% Math
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{gensymb} % symbole degré: \degree
+\usepackage{parskip}
+
+\theoremstyle{definition}
+\newmdtheoremenv[
+  hidealllines=true,
+  leftline=true,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=1ex,
+  innerbottommargin=1ex,
+]{definition}{Définition}
+
+\newcommand{\pbs}[1]{\let\temp=\\#1\let\\=\temp}
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\cov}{\ensuremath{\text{cov}}}
+
+%\hoffset=-1in
+%\oddsidemargin=25mm
+%\evensidemargin=25mm
+%\textwidth=160mm
+
 
 \overfullrule=2cm
 
 \begin{document}
+\frontmatter
+    \pagestyle{plain}
 
-    \input{src/titlepage.tex}
+    \input{src/titlepage}
 
     \tableofcontents
 
-    \input{src/metrology.tex}
-    \input{src/chapter-01.tex}
-    \input{src/chapter-02.tex}
-    \input{src/chapter-03.tex}
-    \input{src/chapter-04.tex}
+    \input{src/00-préambule}
 
-    \appendix
-    \input{src/appendix.tex}
+\mainmatter
+
+    \input{src/05-introduction}
+    \input{src/10-système-si}
+    \input{src/15-chaîne-de-mesure}
+    \input{src/20-modélisation-chaîne}
+    \input{src/25-capteurs}
+    \input{src/30-mesure}
+    \input{src/35-mesure-stochastique}
+    \input{src/40-mesures-multidimensionnelles}
+    \input{src/45-ajustement-modèle}
+
+\appendix
+
+    \input{src/80-histoire-métrologie}
+    \input{src/85-nomenclature}
+    \input{src/90-erreurs-de-mesures}
+    \input{src/95-système-de-mesure}
+
+    %\input{src/solutions.tex} (missing figures there)
+
+\backmatter
+
+    \listoffigures
+    \listoftables
+
+    \input{src/colophon}
 
 \end{document}

@@ -1,4 +1,6 @@
-# Polycopié de techniques de mesures (TechMes)
+# Polycopié de techniques de mesure (TechMes)
+
+[![Build Status](https://travis-ci.org/heig-vd-tin/techniques-de-mesure.svg?branch=master)](https://travis-ci.org/heig-vd-tin/techniques-de-mesure)
 
 Le matériel présenté dans ce polycopié consiste en une reprise, avec beaucoup d'apports
 personnels et de modifications, des cours présentés par les Profs. Lorenzo Zago

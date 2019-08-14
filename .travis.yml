@@ -4,6 +4,16 @@ services: docker
 
 before_install:
   - docker pull nowox/latex:1.1
-
 script:
   - make
+before-deploy:
+  - mkdir dist
+  - cp _build/latex/main.pdf dist/TechMes.pdf
+  - echo -e "<html><body><h1>PDF</h1><a href='TechMes.pdf'>Polycopié</a>" > dist/index.html
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master

@@ -1,19 +1,14 @@
 sudo: required
 language: latex
 services: docker
-
 before_install:
   - docker pull nowox/latex:1.1
 script:
   - make
-before-deploy:
-  - mkdir dist
-  - cp _build/latex/main.pdf dist/TechMes.pdf
-  - echo -e "<html><body><h1>PDF</h1><a href='TechMes.pdf'>Polycopié</a>" > dist/index.html
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
+  provider: releases
+  api_key:
+    secure: TlXZic+DadztpF1lVo+wy4qmZVhLALiZTdPMcEJqEH0tzpqEL3twAJxhAiZXNhl6SkX7bdHgn322nzJF14tvGgSuoZE99G2epZJwsfHM5JF647i7L1MGRAliUSR68qXWjzQRTn6tT5WqhuCXZ7v8SDyR1+KFQTpOuiHGQRD+7KgjB+5LSRcQRU7ktlkUaL76MMy5tnXMj+JlkxecCjQVUH9X2JtQspNG8xbVyWI+XaITf3iZ8/A7kGCiny6rjivTjFSjJ+URiTuzGPll5mJ2KuTGDYaeY4R4IMzviX/bHYHTmHGKxIQdqSwOwdrSwm33JgrjCuua8ZkzSPLv/9oVyWDYadLdvlVEH2h+tH4XYWhXz1XwXTvUhe+f180G8/62rahoxHLaeCrrFewuDppSHlr9uKzC2s4iBG5NUyjLcyZae/Uxws6zMqkKYB1otyMTQBlurBbwWw/hyI/HbWldZNvJbK1X+Zge49mgIKZQQzGE8bMv9N34WPFmMqWvycnj5Xw5nwMghbP4/VPIQaWwWMEMOivCfBS65XsSSc260+uQoU4bG8UIFLHboWnzo+RDrymHsNpAoT9shj1HYAHTtMkjVohvfPzGSVMTxPIYQTX8pSWu3YACwU7fGjI9UeCszOlOdxyzDdPNzUA6ADOlSTrhsB2oTbvRwrDebZjzVEE=
+  file: main.pdf
   on:
-    branch: master
+    repo: heig-vd-tin/techniques-de-mesure

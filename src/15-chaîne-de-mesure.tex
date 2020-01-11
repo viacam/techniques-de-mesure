@@ -2,11 +2,11 @@
 \label{chap:measurement-chain}
 
 \begin{figure}[ht]
-   \centering
-   \vspace{-5mm}
-   \includegraphics[width=\textwidth]{assets/figures/chaîne-de-mesure-étapes-clés.pdf}
-   \caption{Techniques de mesure: les étapes clés.}
-   \label{fig:flowChartTechMes_chaine_de_mesure}
+    \centering
+    \vspace{-5mm}
+    \includegraphics[width=\textwidth]{assets/figures/chaîne-de-mesure-étapes-clés.pdf}
+    \caption{Techniques de mesure: les étapes clés.}
+    \label{fig:flowChartTechMes_chaine_de_mesure}
 \end{figure}
 
 \section{Introduction}
@@ -26,19 +26,19 @@ Il faut donc transmettre l'information entre le capteur et le système de mesure
 \end{definition}
 
 \begin{figure}[ht]
-   \centering
-   \vspace{-5mm}
-   \includegraphics[width=\textwidth]{assets/figures/chaîne-de-mesure.pdf}
-   \caption{Éléments d'une chaîne de mesure. De gauche à droite: le \textbf{capteur}, puis le bloc du \textbf{traitement de signal} (électrique en général), suivi du \textbf{circuit de mesure.}}
-   \label{fig:chaine_de_mesure}
+    \centering
+    \vspace{-5mm}
+    \includegraphics[width=\textwidth]{assets/figures/chaîne-de-mesure.pdf}
+    \caption{Éléments d'une chaîne de mesure. De gauche à droite: le \textbf{capteur}, puis le bloc du \textbf{traitement de signal} (électrique en général), suivi du \textbf{circuit de mesure.}}
+    \label{fig:chaine_de_mesure}
 \end{figure}
 Comme on peut le voir sur la figure \ref{fig:chaine_de_mesure}, une chaîne de mesure comprend toujours au moins trois éléments : le capteur, un circuit de traitement du signal électrique et un élément de mesure.
 
 \begin{itemize}
-\item Le capteur  convertit le mesurande en une grandeur électrique brute (caractéristique non linéaire, bruit et perturbations ajoutés à l'information)
-\item Le traitement du signal électrique, constitué d'un ou plusieurs éléments, utilise l'information contenue dans la grandeur électrique brute pour obtenir une grandeur électrique épurée, dotée d'un meilleur rapport signal/bruit et d'une exploitabilité facilitée. Ensuite on pourra la manipuler facilement, l'amplifier, la transmettre sur une distance suffisante. Par exemple si la grandeur électrique brute est une résistance, un circuit devra injecter un courant dans la résistance pour obtenir une tension proportionnelle, c'est le conditionneur ; après il faudra probablement soustraire de sa sortie la valeur équivalente au  zéro du mesurande. Dans la plupart des cas le conditionneur et l'amplificateur de transmission sont incorporés dans le même boîtier, désigné comme transmetteur. Ce dernier peut même être monté à l'intérieur de la structure du capteur proprement dit, l'utilisateur ne pouvant alors choisir qu'une ou deux options de grandeur électrique de transmission. À l'autre extrémité du canal de transmission, on trouve un récepteur capable de décoder le signal transmis avant de l'appliquer au circuit de mesure.
-\item La mesure  proprement dite consiste à comparer le signal épuré avec l'équivalent de l'unité de mesure,  pour obtenir une valeur numérique de représentation du mesurande (un convertisseur A/D comprend toujours une tension de référence interne représentant l'unité de mesure; dans un appareil analogique, l'unité de mesure est matérialisée: ce sont les marques sur l'écran d'affichage de l'appareil)
-\item Un traitement numérique  de la mesure peut encore être ajouté à la chaîne pour améliorer l'élimination du bruit, linéariser le résultat ou combiner les valeurs de plusieurs mesurandes en un résultat de mesure indirecte (par exemple déduire une énergie de la mesure d'un débit et d'une différence de température). Une transmission à distance peut également intervenir à ce niveau, vers un régulateur, un ordinateur central ou une salle de commande.
+    \item Le capteur  convertit le mesurande en une grandeur électrique brute (caractéristique non linéaire, bruit et perturbations ajoutés à l'information)
+    \item Le traitement du signal électrique, constitué d'un ou plusieurs éléments, utilise l'information contenue dans la grandeur électrique brute pour obtenir une grandeur électrique épurée, dotée d'un meilleur rapport signal/bruit et d'une exploitabilité facilitée. Ensuite on pourra la manipuler facilement, l'amplifier, la transmettre sur une distance suffisante. Par exemple si la grandeur électrique brute est une résistance, un circuit devra injecter un courant dans la résistance pour obtenir une tension proportionnelle, c'est le conditionneur ; après il faudra probablement soustraire de sa sortie la valeur équivalente au  zéro du mesurande. Dans la plupart des cas le conditionneur et l'amplificateur de transmission sont incorporés dans le même boîtier, désigné comme transmetteur. Ce dernier peut même être monté à l'intérieur de la structure du capteur proprement dit, l'utilisateur ne pouvant alors choisir qu'une ou deux options de grandeur électrique de transmission. À l'autre extrémité du canal de transmission, on trouve un récepteur capable de décoder le signal transmis avant de l'appliquer au circuit de mesure.
+    \item La mesure  proprement dite consiste à comparer le signal épuré avec l'équivalent de l'unité de mesure,  pour obtenir une valeur numérique de représentation du mesurande (un convertisseur A/D comprend toujours une tension de référence interne représentant l'unité de mesure; dans un appareil analogique, l'unité de mesure est matérialisée: ce sont les marques sur l'écran d'affichage de l'appareil)
+    \item Un traitement numérique  de la mesure peut encore être ajouté à la chaîne pour améliorer l'élimination du bruit, linéariser le résultat ou combiner les valeurs de plusieurs mesurandes en un résultat de mesure indirecte (par exemple déduire une énergie de la mesure d'un débit et d'une différence de température). Une transmission à distance peut également intervenir à ce niveau, vers un régulateur, un ordinateur central ou une salle de commande.
 \end{itemize}
 Certains éléments de la chaîne de mesure peuvent être partagés entre plusieurs mesurandes (économie de place, coût de l'installation), mais la conception et l'analyse du système de mesure peut toujours mener à une décomposition en  chaînes de mesure affectées momentanément à chaque mesurande.
 
@@ -60,24 +60,24 @@ Certains éléments de la chaîne de mesure peuvent être partagés entre plusie
 Le capteur est construit pour exploiter une propriété de la matière, décrite par une \textbf{loi physique}, permettant de connaître la correspondance entre la grandeur électrique à la sortie du capteur et la grandeur physique à mesurer. Par exemple, pour mesurer une pression, on peut utiliser la résistance d'un fil et exploiter la loi de la piézorésistivité exprimant la variation de la résistance en fonction de la déformation du fil imposée par la pression. Ainsi à chaque valeur de la résistance correspond une valeur particulière de la pression et la loi physique nous permet de calculer la pression à partir de la mesure de la résistance du capteur. Attention de ne pas confondre avec la piézoélectricité, qui consiste en une génération ou absorption de charges électriques en fonction de la déformation du matériau.
 
 \begin{figure}
-   \centering
-   \includegraphics[width=0.96\textwidth]{assets/figures/loi-physique.pdf}
-   \caption{Capteur idéal}
-   \label{fig:Loi_Physique}
+    \centering
+    \includegraphics[width=0.96\textwidth]{assets/figures/loi-physique.pdf}
+    \caption{Capteur idéal}
+    \label{fig:Loi_Physique}
 \end{figure}
 
 Malheureusement le capteur étant un élément réel, le comportement de la grandeur de sortie ne peut être décrit par une seule et unique loi physique: Tout irait bien si, dans notre exemple, la déformation du fil n'était due qu'à la pression; en fait des vibrations, ou une modification de la température peuvent également provoquer une légère déformation du fil, donc une variation non désirée de la résistance; plus grave encore, la température provoque directement une variation de la résistance, indépendante de la déformation et décrite par une autre loi physique.
 \begin{figure}
-   \centering
-   \includegraphics[width=0.96\textwidth]{assets/figures/capteur-réel.pdf}
-   \caption{Capteur réel}
-   \label{fig:Grandeur_Influence}
+    \centering
+    \includegraphics[width=0.96\textwidth]{assets/figures/capteur-réel.pdf}
+    \caption{Capteur réel}
+    \label{fig:Grandeur_Influence}
 \end{figure}
 
 Il faut donc bien admettre qu'un capteur n'est jamais idéal, et qu'il doit être représenté par une combinaison de lois physiques, reliant la grandeur de sortie à différentes grandeurs d'entrées. L'une d'entre elles est la grandeur que l'on désire mesurer, appelée le \textbf{mesurande}, les autres sont des \textbf{grandeurs d'influence} car elles modifient la sortie et nous font croire à une variation de la grandeur désirée: le résultat de mesure est influencé par ces grandeurs.
 
 \begin{definition}
-Les grandeurs d'influence $Zi$ sont toutes les grandeurs d'entrée non désirées du système, dont l'effet sera de modifier la grandeur de sortie.
+    Les grandeurs d'influence $Zi$ sont toutes les grandeurs d'entrée non désirées du système, dont l'effet sera de modifier la grandeur de sortie.
 \end{definition}
 
 \begin{itemize}
@@ -95,13 +95,13 @@ Dans le processeur du système ou de l'appareil de mesure, on ne dispose que de 
 Il convient donc d'établir un modèle mathématique de la chaîne de mesure, valable dans un certain domaine des conditions d'utilisation, et représentant une approximation de la réponse réelle
 
 \begin{equation}
-Y=\mathcal{F}(X)
+    Y=\mathcal{F}(X)
 \end{equation}
 
 L'opération mathématique inverse ne nous donnera qu'une estimation de la valeur du mesurande,
 
 \begin{equation}
-X_m=\mathcal{F}^{-1}(Y)
+    X_m=\mathcal{F}^{-1}(Y)
 \end{equation}
 
 \begin{definition}
@@ -151,7 +151,7 @@ Bien entendu, l'étendue de mesure sera toujours limitée. Au-delà, soit la sor
 C'est la forme mathématique que l'on retrouve dans la grande majorité des cas. En effet, quelque soit la forme de $\mathcal{F}(X)$, pour une étendue de mesure suffisamment faible il est toujours possible de remplacer la courbe $\mathcal{F}(X)$ par un segment de droite. Nous l'écrirons
 
 \begin{equation}
-Y = G\cdot X + O
+    Y = G\cdot X + O
 \end{equation}
 
 où le facteur de multiplication $G$ est le \textbf{gain} linéaire de la chaîne de mesure, et $O$ est l'offset, extrapolation de $Y$ en $X=0$.
@@ -161,7 +161,7 @@ où le facteur de multiplication $G$ est le \textbf{gain} linéaire de la chaîn
 Lorsque l'étendue de mesure désirée ne permet plus une approximation linéaire, on utilise souvent un polynôme de degré $n$:
 
 \begin{equation}
-Y = a_0 + a_1\cdot X + a_2\cdot X^2 + ... + a_n \cdot X^n
+    Y = a_0 + a_1\cdot X + a_2\cdot X^2 + ... + a_n \cdot X^n
 \end{equation}
 
 La forme générale de la réponse est donnée par les $n+1$ coefficients $a_0$ à $a_n$. Ceux-ci sont en général imposés par le type de capteur plutôt que par la chaîne de mesure, mais en général, dans la chaîne, au moins un amplificateur permet d'ajuster tant le décalage $a_0$, qu'un gain global, facteur de multiplication des coefficients $a_1$ à $a_n$.
@@ -169,7 +169,7 @@ La forme générale de la réponse est donnée par les $n+1$ coefficients $a_0$ 
 La résolution du problème de mesure implique l'inversion de la fonction, ce qui revient à utiliser un autre polynôme de degré n exprimant X en fonction de Y ; c'est souvent ce polynôme qui est recherché par régression mathématique:
 
 \begin{equation}
-X_m = c_0 + c_1\cdot Y + c_2\cdot Y^2 + .... + c_n\cdot Y^n
+    X_m = c_0 + c_1\cdot Y + c_2\cdot Y^2 + .... + c_n\cdot Y^n
 \end{equation}
 
 \paragraph{Exemple de modèle quadratique: capteur de débit à déprimogène}
@@ -203,19 +203,19 @@ Enfin, plus rarement, le modèle découle directement de la loi physique exploit
 Une thermistance est une résistance en mode semi-conducteur, dont la valeur varie avec la température, selon
 
 \begin{equation}
-R(T) = R_{25}\exp{\left[b\left(\frac{1}{T}-\frac{1}{298}\right)\right]}
+    R(T) = R_{25}\exp{\left[b\left(\frac{1}{T}-\frac{1}{298}\right)\right]}
 \end{equation}
 
 où $T$ est en kelvin, $R_{25}$ est la résistance à 25$\degree$C, c.-à-d. 298$\degree$K, et $b$ un coefficient (en kelvin) caractéristique du semi-conducteur. En inversant la fonction, on trouve:
 
 \begin{equation}
-\frac{1}{T} = \frac{1}{b}\ln{\left(\frac{R}{R_{25}}\right)}+\frac{1}{298} = A + B\,\ln{R}
+    \frac{1}{T} = \frac{1}{b}\ln{\left(\frac{R}{R_{25}}\right)}+\frac{1}{298} = A + B\,\ln{R}
 \end{equation}
 
 L'expérience montre cependant que le coefficient $b$ ne peut être considéré comme constant que dans un faible domaine de température (15 à 25$\degree$C), par conséquent l'équation ci-dessus a été complétée (à la manière polynomiale) suivant
 
 \begin{equation}
-\frac{1}{T} = A + B \ln{R} + C \ln^3{R}
+    \frac{1}{T} = A + B \ln{R} + C \ln^3{R}
 \end{equation}
 
 Cette expression est alors valable dans un domaine de 100 à 150$\degree$C avec une incertitude de l'ordre de 0.01$\degree$ C.
@@ -243,7 +243,7 @@ L'interaction entre l'objet à mesurer et le système de mesure exige un transfe
 Le transfert d'énergie, n'est pas la seule cause d'effet de charge: pour pouvoir insérer le capteur à l'endroit de la mesure, il faut généralement modifier la structure de l'objet, donc en modifier le comportement. La difficulté est alors de choisir un capteur et un lieu de mesure permettant d'éviter trop de modifications du comportement du processus, tout en maintenant la possibilité d'obtenir des mesures significatives.
 
 \begin{definition}
-L'effet de charge (\emph{loading effect}) est la modification de l'état du processus et du système de mesure dû aux sorties non désirées du transducteur (échange d'énergie) ou au changement de structure  du processus imposé par la présence du transducteur.
+    L'effet de charge (\emph{loading effect}) est la modification de l'état du processus et du système de mesure dû aux sorties non désirées du transducteur (échange d'énergie) ou au changement de structure  du processus imposé par la présence du transducteur.
 \end{definition}
 
 \paragraph{Exemples}
@@ -251,9 +251,9 @@ L'effet de charge (\emph{loading effect}) est la modification de l'état du proc
 \begin{enumerate}
     \item Un voltmètre a toujours une résistance interne $R_v$. La mesure de la tension de charge $U_b$ d'une batterie de résistance interne $R_i$ s'accompagne du passage d'un courant $i = U_b/(R_i+R_v)$. La puissance transférée au voltmètre est donc $P=U_v\cdot i$. L'effet de charge se traduit donc par le fait que le voltmètre ne mesure pas exactement $U_b$, mais
 
-    \begin{equation}
-    U_v=U_b\cdot\frac{R_v}{R_v+R_i}
-    \end{equation}
+          \begin{equation}
+              U_v=U_b\cdot\frac{R_v}{R_v+R_i}
+          \end{equation}
 
     \item Pour mesurer la résistance d'une jauge de contrainte, il faut faire passer un courant dans le fil. Ce courant provoque un échauffement du capteur, qui se transmet au support et conduit à une modification de la grandeur d'influence (la température), donc de la grandeur de sortie. Il y a  effet de charge par échange d'énergie. De plus, le fait de coller la jauge sur son support modifie la constante d'élasticité locale. Pour une même contrainte, la déformation sera légèrement différente: c'est un 2e effet de charge dû à une modification de structure du processus.
     \item Pour mesurer la vitesse des gaz à la sortie d'une tuyère, il faut placer une sonde, dans le flux de gaz. Aussi petite que soit la sonde, elle va modifier les lignes de flux. Il y a effet de charge par modification structurelle.
@@ -278,10 +278,10 @@ Il existe des méthodes pour se protéger contre de telles perturbations, essent
 L'analyse et le choix des caractéristiques du système de mesure étant fortement liés à l'application, il est clair qu'il n'est pas possible d'énoncer des règles universelles. L'objectif de ce paragraphe est cependant de donner une vision générale de ces systèmes et de leurs composants. Le choix d'une réalisation doit être le résultat d'un travail de synthèse entre les connaissances des moyens de mesure, des structures possibles et des éléments disponibles.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.9\textwidth]{assets/figures/acquisition-de-données.pdf}
-\caption{Système typique d'acquisition de données}
-\label{fig:SystemeTypiquedAcquisitionDeDonnees}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/figures/acquisition-de-données.pdf}
+    \caption{Système typique d'acquisition de données}
+    \label{fig:SystemeTypiquedAcquisitionDeDonnees}
 \end{figure}
 
 Tout système d'acquisition comprend au moins une chaîne de mesure. Dès que l'on est en présence de plusieurs chaînes se pose la question d'une économie de matériel en exploitant un multiplexage, soit sous forme analogique (sortie des conditionneurs ou transmetteurs connecter successivement à un seul convertisseur A/D), soit sous forme numérique (les convertisseurs sont reliés à l'ordinateur au travers d'un bus numérique).
@@ -292,16 +292,16 @@ Le coeur du système est son ordinateur ou processeur, chargé de commander la s
 
 \begin{figure}[ht]
     \centering
-	\includegraphics[width=0.9\textwidth]{assets/figures/entrées-analogiques.pdf}
-	\caption{Carte universelle d'acquisition: entrées analogiques.}
-	\label{fig:Analog_Frontend}
+    \includegraphics[width=0.9\textwidth]{assets/figures/entrées-analogiques.pdf}
+    \caption{Carte universelle d'acquisition: entrées analogiques.}
+    \label{fig:Analog_Frontend}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-	\includegraphics[width=0.9\textwidth]{assets/figures/2_9b_Sorties_analogiques.PNG}
-	\caption{Carte universelle d'acquisition: sorties analogiques.}
-	\label{fig:Sorties_analogiques}
+    \includegraphics[width=0.9\textwidth]{assets/figures/2_9b_Sorties_analogiques.PNG}
+    \caption{Carte universelle d'acquisition: sorties analogiques.}
+    \label{fig:Sorties_analogiques}
 \end{figure}
 
 \section{Architectures}
@@ -322,20 +322,20 @@ Trois modes de fonctionnement du multiplexeur analogique sont à disposition:
 
 \begin{figure}[h]
     \centering
-	\includegraphics[width=10cm]{assets/figures/2_10_Mesure_asymetrique.PNG}
-	\caption{Mesure asymétrique (SE = Single Ended).}
+    \includegraphics[width=10cm]{assets/figures/2_10_Mesure_asymetrique.PNG}
+    \caption{Mesure asymétrique (SE = Single Ended).}
     \label{fig:Mesure_asymetrique}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-	\includegraphics[width=10cm]{assets/figures/2_11_Mesure_Pseudo_differentielle.PNG}
-	\caption{Mesure Pseudo-différentielle ou Asymétrique référencée (RSE = Referenced Single Ended).}
-	\label{fig:Mesure_Pseudo_differentielle}
+    \includegraphics[width=10cm]{assets/figures/2_11_Mesure_Pseudo_differentielle.PNG}
+    \caption{Mesure Pseudo-différentielle ou Asymétrique référencée (RSE = Referenced Single Ended).}
+    \label{fig:Mesure_Pseudo_differentielle}
     \centering
-	\includegraphics[width=10cm]{assets/figures/2_12_Mesure_differentielle.PNG}
-	\caption{Mesure différentielle.}
-	\label{fig:Mesure_differentielle}
+    \includegraphics[width=10cm]{assets/figures/2_12_Mesure_differentielle.PNG}
+    \caption{Mesure différentielle.}
+    \label{fig:Mesure_differentielle}
 \end{figure}
 
 \section{Sources flottantes et courants de polarisation}
@@ -366,14 +366,14 @@ On peut classifier les signaux en trois catégories selon leur représentation t
 \end{description}
 
 \begin{figure}[h]
-   \centering
-   \includegraphics[width=13cm]{assets/figures/types-de-signaux.pdf}
-   \caption{Les trois types de signaux les plus fréquents.}\vspace{5mm}
-   \label{fig:typsign1}
-   \centering
-   \includegraphics[width=13cm]{assets/figures/sigda.pdf}
-   \caption{Signaux déterministes et aléatoires.}
-   \label{fig:sigda1}
+    \centering
+    \includegraphics[width=13cm]{assets/figures/types-de-signaux.pdf}
+    \caption{Les trois types de signaux les plus fréquents.}\vspace{5mm}
+    \label{fig:typsign1}
+    \centering
+    \includegraphics[width=13cm]{assets/figures/sigda.pdf}
+    \caption{Signaux déterministes et aléatoires.}
+    \label{fig:sigda1}
 \end{figure}
 En fonction du phénomène physique qu'ils représentent, il faut aussi distinguer les signaux \textbf{déterministes}, c'est-à-dire les signaux pour lesquels les valeurs futures peuvent être prédites, et les signaux \textbf{aléatoires} qui ne sont pas prédictibles et qui nécessitent un traitement spécifique (fig.~\ref{fig:sigda1}).
 

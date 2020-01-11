@@ -8,16 +8,16 @@ Pour des équipements plus complexes, comme ceux que l'on trouve dans les instal
 
 Un système de mesure est généralement constitué de quatre parties (fig.~\ref{fig:sysmes}):
 \begin{description}
-\item[le capteur] qui traduit la valeur physique mesurée en un signal; il utilise un phénomène physique réagissant à la grandeur à mesurer et assure sa transformation en un signal électrique, optique ou mécanique plus facile à manipuler et à quantifier (voir le cours HEIG-VD \textit{capteurs}).
-\item[le conditionneur] qui transforme le signal pour le mettre dans une forme adéquate à sa lecture - par exemple l'amplifier ou le filtrer,
-\item[la sortie] de l'instrument de mesure qui permet de lire puis enregistrer la mesure,
-\item[un système de contrôle (optionnel)] par feedback dans le cas où le système de mesure est inclus dans un contrôle de processus.
+    \item[le capteur] qui traduit la valeur physique mesurée en un signal; il utilise un phénomène physique réagissant à la grandeur à mesurer et assure sa transformation en un signal électrique, optique ou mécanique plus facile à manipuler et à quantifier (voir le cours HEIG-VD \textit{capteurs}).
+    \item[le conditionneur] qui transforme le signal pour le mettre dans une forme adéquate à sa lecture - par exemple l'amplifier ou le filtrer,
+    \item[la sortie] de l'instrument de mesure qui permet de lire puis enregistrer la mesure,
+    \item[un système de contrôle (optionnel)] par feedback dans le cas où le système de mesure est inclus dans un contrôle de processus.
 \end{description}
 \begin{sidewaysfigure}[p]
-   \centering
-   \includegraphics[width=20cm]{assets/figures/systemeMesure.pdf}
-   \caption{Schéma général d'un système de mesure}
-   \label{fig:sysmes}
+    \centering
+    \includegraphics[width=20cm]{assets/figures/systemeMesure.pdf}
+    \caption{Schéma général d'un système de mesure}
+    \label{fig:sysmes}
 \end{sidewaysfigure}
 
 \section{Les différents types de signaux}
@@ -26,24 +26,24 @@ Un système de mesure transforme une \textbf{entrée}, en règle générale une 
 
 On peut classifier les signaux en trois catégories selon leur représentation temporelle et les valeurs prises par la quantité mesurée (fig.~\ref{fig:typsign}):
 \begin{description}
-\item[Un signal continu] est défini pour toutes les valeurs du temps et peut prendre n'importe quelle valeur en amplitude,
-\item[Un signal discret] est en général un signal continu qui est mesuré à certains instants seulement, mais il peut aussi s'agir d'un signal naturellement discontinu, tel que le nombre de photons reçus par un détecteur pendant une certaine durée de temps, un nombre de véhicules par tranche d'heure sur une route, etc.
-\item[Un signal numérique] est un signal discret quantifié sur un certain nombre de niveaux (généralement des puissances de 2) et qui ne peut prendre qu'un ensemble discret de valeurs, par exemple la numérisation d'un signal électrique de -10 à +10 V sur 8 bits non signés, de 0 à 255.
+    \item[Un signal continu] est défini pour toutes les valeurs du temps et peut prendre n'importe quelle valeur en amplitude,
+    \item[Un signal discret] est en général un signal continu qui est mesuré à certains instants seulement, mais il peut aussi s'agir d'un signal naturellement discontinu, tel que le nombre de photons reçus par un détecteur pendant une certaine durée de temps, un nombre de véhicules par tranche d'heure sur une route, etc.
+    \item[Un signal numérique] est un signal discret quantifié sur un certain nombre de niveaux (généralement des puissances de 2) et qui ne peut prendre qu'un ensemble discret de valeurs, par exemple la numérisation d'un signal électrique de -10 à +10 V sur 8 bits non signés, de 0 à 255.
 \end{description}
 \begin{figure}[h]
-   \centering
-   \includegraphics[width=16cm]{assets/figures/typesign.pdf}
-   \caption{Les trois types de signaux les plus fréquents.}\vspace{5mm}
-   \label{fig:typsign}
+    \centering
+    \includegraphics[width=16cm]{assets/figures/typesign.pdf}
+    \caption{Les trois types de signaux les plus fréquents.}\vspace{5mm}
+    \label{fig:typsign}
 \end{figure}
 
 \newpage
 En fonction du phénomène physique qu'ils représentent, il faut aussi distinguer les signaux \textbf{déterministes}, c'est-à-dire les signaux pour lesquels les valeurs futures peuvent être prédites, et les signaux \textbf{aléatoires} qui ne sont pas prédictibles et qui nécessitent un traitement spécifique (fig.~\ref{fig:sigda}).
 \begin{figure}[h]
-   \centering
-   \includegraphics[width=16cm]{assets/figures/sigda.pdf}
-   \caption{Signaux déterministes et aléatoires.}
-   \label{fig:sigda}
+    \centering
+    \includegraphics[width=16cm]{assets/figures/sigda.pdf}
+    \caption{Signaux déterministes et aléatoires.}
+    \label{fig:sigda}
 \end{figure}
 
 \section{méthodes générales de mesure}
@@ -55,31 +55,31 @@ C'est la méthode qui consiste à obtenir la déviation d'un système, d'une pos
 Dans la méthode de déviation par \textbf{élongation simple}, les deux positions sont des positions au sens géométrique du mot; elles ne mettent pas en jeu un équilibre particulier de force. Ainsi en est-il de la mesure d'une longueur au pied à coulisse, oà l'opérateur déplace les palpeurs pour venir en contact entre eux (zéro), ou sur la pièce (mesure).
 
 Dans la méthode de déviation par \textbf{équilibre spontané}, les positions d'équilibre sont le résultat d'une opposition entre deux forces égales. L'exemple typique d'une mesure par \begin{wrapfigure}[13]{r}[0pt]{3cm}
-   \centering
-   \includegraphics[width=3cm]{assets/figures/mesdev.pdf}
-%   \caption{Peson à ressort}
-%   \label{fig:mesdev}
+    \centering
+    \includegraphics[width=3cm]{assets/figures/mesdev.pdf}
+    %   \caption{Peson à ressort}
+    %   \label{fig:mesdev}
 \end{wrapfigure}
 équilibre spontané est le \textbf{peson à ressort} (figure ci-contre). On suspend une masse sur un plateau fixé à l'extrémité d'un ressort vertical. Les forces de résistance, dont le ressort devient le siège quand il est déformé, et est proportionnel à l'allongement, augmentent jusqu'à égaler le poids du corps, et c'est la valeur de l'allongement du ressort, à l'équilibre, qui indique la masse. On peut certes calculer les forces développées à partir des caractéristiques du ressort, mais il est plus simple et plus précis de tarer le ressort avec des masses connues.
 
 Les appareils qui utilisent la méthode de déviation sont innombrables en métrologie. Quelques types élémentaires sont mentionnés dans le tableau ci-dessous:
 \begin{center}
-\begin{tabular}{llll}
-Appareil	 & Mesurande & Grandeur d'opposition & Mesure\\ \hline
-Peson à ressort & force & contrainte ressort & allongement\\
-Peson à contrepoids & force & moment d'une force & angle\\
-Baromètre à mercure & pression & pression hydrostatique & différence de niveau\\
-Thermomètre à gaz & température & volume & déplacement d'un niveau
-\end{tabular}
+    \begin{tabular}{llll}
+        Appareil            & Mesurande   & Grandeur d'opposition  & Mesure                  \\ \hline
+        Peson à ressort     & force       & contrainte ressort     & allongement             \\
+        Peson à contrepoids & force       & moment d'une force     & angle                   \\
+        Baromètre à mercure & pression    & pression hydrostatique & différence de niveau    \\
+        Thermomètre à gaz   & température & volume                 & déplacement d'un niveau
+    \end{tabular}
 \end{center}
 
 \vspace{4mm}
 Le \textbf{galvanomètre} à cadre mobile (figure \ref{fig:galva}) est un autre exemple de méthode par déviation. C'est l'égalité du couple produit par les forces électromagnétiques et du contre-couple généré par la torsion du fil de suspension du cadre qui définit la déviation qui donne la mesure. Le système se déforme jusqu'à ce que cet équilibre soit atteint.
 \begin{figure}[h]
-   \centering
-   \includegraphics[height=4.6cm]{assets/figures/galva.pdf}
-   \caption{Principe du galvanomètre. À gauche, on observe l'aimant permanent générateur d'un champ magnétique à travers le cadre mobile du galvanomètre. À droite, vue détaillée du cadre et de la force d'origine électromagnétique subie par le cadre dans lequel circule le courant (ou la tension) que l'on désire mesurer.}
-   \label{fig:galva}
+    \centering
+    \includegraphics[height=4.6cm]{assets/figures/galva.pdf}
+    \caption{Principe du galvanomètre. À gauche, on observe l'aimant permanent générateur d'un champ magnétique à travers le cadre mobile du galvanomètre. À droite, vue détaillée du cadre et de la force d'origine électromagnétique subie par le cadre dans lequel circule le courant (ou la tension) que l'on désire mesurer.}
+    \label{fig:galva}
 \end{figure}
 
 Dans ce cas, cependant, la transformation et transmission d'énergie sont moins directes que dans le cas du peson: le premier effet de la tension électrique appliquée aux bornes du cadre sera d'instaurer un courant continu qui dépend des constantes électriques du circuit. Ce courant, plongé dans le champ magnétique de l'aimant permanent, crée une force électromagnétique mettant en rotation le cadre, et partant, tord le fil de torsion, support du cadre. Le contre-couple dé à la torsion du fil augmente avec l'angle de rotation du cadre, jusqu'à se trouver en équilibre et compenser le couple engendré par la force électromagnétique. La rotation est alors stabilisée, et après quelques instants d'oscillation, la valeur finale pourra être lue.
@@ -88,9 +88,9 @@ Dans ce cas, cependant, la transformation et transmission d'énergie sont moins 
 
 Mentionnons quelques précautions exigées par l'emploi de la méthode par déviation :
 \begin{itemize}
-\item\textbf{Mise à zéro} : la mesure est fournie par l'écart à partir d'une position d'origine prise comme zéro. Il est donc impératif de vérifier que l'instrument indique effectivement zéro en l'absence de mesurande. Sinon il faudra noter la position de départ qui est un "faux zéro". Les instruments électroniques, les thermomètres, les manomètres présentent souvent des décalages de zéro (en anglais \textit{offset}) dont il faut tenir compte.
-\item Il faut attendre que l'\textbf{équilibre soit atteint}.
-\item Il faut aussi porter attention aux \textbf{conditions de linéarité}: en effet, la loi la plus avantageuse qui puisse relier le mesurande et la mesure, tant pour son interprétation immédiate que pour son traitement ultérieur, est une \textbf{relation linéaire}. C'est elle que l'on cherche généralement à obtenir. Un bon moyen d'y parvenir est de n'utiliser que des transducteurs\footnote{Un transducteur est un dispositif convertissant un signal physique en un autre; par exemple un signal lumineux en signale nerveux (vision animale) ou signal électrique (photorécepteur).} linéaires dans la chaîne de mesurage. Les transducteurs sont en général linéaires dans une plage plus ou moins étroite de l'étendue, généralement au voisinage du zéro. Si le système de mesure comporte un traitement numérique, il est possible d'introduire, dans le programme traitant les mesures, la courbe de calibration du capteur, ce qui élimine les problèmes de non-linéarité.
+    \item\textbf{Mise à zéro} : la mesure est fournie par l'écart à partir d'une position d'origine prise comme zéro. Il est donc impératif de vérifier que l'instrument indique effectivement zéro en l'absence de mesurande. Sinon il faudra noter la position de départ qui est un "faux zéro". Les instruments électroniques, les thermomètres, les manomètres présentent souvent des décalages de zéro (en anglais \textit{offset}) dont il faut tenir compte.
+    \item Il faut attendre que l'\textbf{équilibre soit atteint}.
+    \item Il faut aussi porter attention aux \textbf{conditions de linéarité}: en effet, la loi la plus avantageuse qui puisse relier le mesurande et la mesure, tant pour son interprétation immédiate que pour son traitement ultérieur, est une \textbf{relation linéaire}. C'est elle que l'on cherche généralement à obtenir. Un bon moyen d'y parvenir est de n'utiliser que des transducteurs\footnote{Un transducteur est un dispositif convertissant un signal physique en un autre; par exemple un signal lumineux en signale nerveux (vision animale) ou signal électrique (photorécepteur).} linéaires dans la chaîne de mesurage. Les transducteurs sont en général linéaires dans une plage plus ou moins étroite de l'étendue, généralement au voisinage du zéro. Si le système de mesure comporte un traitement numérique, il est possible d'introduire, dans le programme traitant les mesures, la courbe de calibration du capteur, ce qui élimine les problèmes de non-linéarité.
 \end{itemize}
 
 \newpage
@@ -98,9 +98,9 @@ Mentionnons quelques précautions exigées par l'emploi de la méthode par dévi
 \subsection{Mesure par comparaison}
 
 \begin{wrapfigure}[10]{l}[5pt]{8cm}
-   \centering
-   \includegraphics[width=8cm]{assets/figures/asscomp.pdf}
-   \label{fig:asscomp}
+    \centering
+    \includegraphics[width=8cm]{assets/figures/asscomp.pdf}
+    \label{fig:asscomp}
 \end{wrapfigure}
 Les mesures par comparaison couvrent un très large nombre de mesures de toutes grandeurs. Le principe général est de comparer le mesurande $x$ à une grandeur connue de même nature $y$ pour obtenir $x=y$ ou $x-y=0$.
 
@@ -109,11 +109,11 @@ Cette grandeur de comparaison est parfois réglée par un opérateur - dont le r
 \subsubsection{A. méthode d'opposition ou méthode de zéro}
 
 \begin{figure}[h]
-   \centering
-   \includegraphics[height=4cm]{assets/figures/balande-roberval.pdf}\hspace{5mm}
-   \includegraphics[height=4cm]{assets/figures/dynamo.pdf}
-   \caption{Gauche: balance de Roberval. Droite: dynamomètre électromagnétique.}
-   \label{fig:balance}
+    \centering
+    \includegraphics[height=4cm]{assets/figures/balande-roberval.pdf}\hspace{5mm}
+    \includegraphics[height=4cm]{assets/figures/dynamo.pdf}
+    \caption{Gauche: balance de Roberval. Droite: dynamomètre électromagnétique.}
+    \label{fig:balance}
 \end{figure}
 Une \textbf{balance de Roberval} (figure \ref{fig:balance}) possède tous les organes d'un appareil de zéro: le soustracteur (fléau), le détecteur d'écart (l'aiguille), la grandeur d'opposition (boîte de poids). C'est l'opérateur qui apprécie l'écart puis dépose ou retire les poids pour obtenir l'équilibre.
 
@@ -122,10 +122,10 @@ Un autre exemple de méthode de zéro par asservissement est présenté en figur
 \subsubsection{B. Montages en pont}
 
 \begin{wrapfigure}[14]{l}[0pt]{6cm}
-   \centering
-   \includegraphics[width=6cm]{assets/figures/wheatstone.pdf}
-   \caption{Pont de Wheatstone.}
-   \label{fig:pont}
+    \centering
+    \includegraphics[width=6cm]{assets/figures/wheatstone.pdf}
+    \caption{Pont de Wheatstone.}
+    \label{fig:pont}
 \end{wrapfigure}
 Le montage en pont est un montage différentiel qui soustrait les réponses de deux bras contigus. Ceci permet de s'affranchir de l'influence de certaines grandeurs parasites qui pourraient masquer le phénomène auquel on porte intérêt.
 
@@ -139,10 +139,10 @@ C'est encore une variante de la méthode de comparaison, mais ici la grandeur de
 
 Au mesurande on substitue une grandeur connue qui doit provoquer un effet identique. Puisqu'il s'agit de comparer deux effets successifs, il faut qu'un élément garde la trace du premier effet; il peut prendre dans certains appareils une place très importante, sous le nom de mémoire (figure \ref{fig:metsub}). Dans le cas du peson, par exemple, on décroche le poids inconnu et on le remplace par des poids marqués pour retrouver l'indication précédemment notée.
 \begin{figure}[h]
-   \centering
-   \includegraphics[width=15cm]{assets/figures/metsub.pdf}
-   \caption{méthode de la substitution.}
-   \label{fig:metsub}
+    \centering
+    \includegraphics[width=15cm]{assets/figures/metsub.pdf}
+    \caption{méthode de la substitution.}
+    \label{fig:metsub}
 \end{figure}
 
 Pour une balance on fait l'équilibre avec une tare, puis on substitue des poids marqués à l'objet à peser. C'est la méthode dite de \textbf{Borda}. C'est la tare qui fait office de mémoire. La méthode s'étend à toutes sortes de mesures: différence de potentiel dans certains convertisseurs analogiques numériques, radioactivité, longueur, etc.
@@ -152,19 +152,19 @@ En contrôle dimensionnel, il est classique de substituer à la pièce dont la c
 \subsubsection{E. méthode de la permutation}
 
 \begin{wrapfigure}[12]{r}[6pt]{6cm}
-   \vspace{-2cm}
-   \centering
-   \includegraphics[width=6cm]{assets/figures/perm.pdf}
-   \caption{méthode de la permutation.}
-   \label{fig:perm}
+    \vspace{-2cm}
+    \centering
+    \includegraphics[width=6cm]{assets/figures/perm.pdf}
+    \caption{méthode de la permutation.}
+    \label{fig:perm}
 \end{wrapfigure}
 Lorsqu'on utilise un appareil qui réalise l'égalité $ax=by$, il faut en principe connaître $a/b$ pour avoir la mesure. Cependant, il est possible d'éliminer le facteur $a/b$ en effectuant deux mesures selon le schéma indiqué dans la figure \ref{fig:perm} : l'équilibre des moments donne
 $$
-a\,x\,g=b\,y\,g\ \ \text{et}\ \ a\,(y+z)\,g=b\,x\,g
+    a\,x\,g=b\,y\,g\ \ \text{et}\ \ a\,(y+z)\,g=b\,x\,g
 $$
 et en divisant membre à membre on obtient
 $$
-\frac{x}{y+z}=\frac{y}{x}
+    \frac{x}{y+z}=\frac{y}{x}
 $$
 soit finalement $x=\sqrt{y(y+z)}$. Appliquée aux balances à bras inégaux, cette méthode est connue sous le nom de méthode de \textbf{Gauss}.
 

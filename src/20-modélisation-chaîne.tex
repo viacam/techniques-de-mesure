@@ -14,90 +14,90 @@ Nous avons vu au chapitre \ref{chap:introduction} que les approximations mathém
 Le modèle linéaire est une droite, ne passant pas nécessairement par l'origine, approchant au mieux la caractéristique de la chaîne de mesure:
 
 \begin{center}
-\fbox{\textbf{Y = G X  + Of}}
+    \fbox{\textbf{Y = G X  + Of}}
 \end{center}
 
 Cette équation fait intervenir les deux paramètres G et Of, caractéristiques de la chaîne.
 
 \begin{definition}
-	Le gain $G$ est la pente de la caractéristique entrée-sortie.
+    Le gain $G$ est la pente de la caractéristique entrée-sortie.
 \end{definition}
 
 \begin{definition}
-	Le décalage $Of$ est l'ordonnée à l'origine du modèle linéaire (de l'anglais \emph{offset}).
+    Le décalage $Of$ est l'ordonnée à l'origine du modèle linéaire (de l'anglais \emph{offset}).
 \end{definition}
 
 Il est fondamental de ne jamais oublier qu'il ne s'agit là que d'une approximation de la courbe de réponse (forme de la réponse pas tout à fait droite, tolérances de fabrication), et de plus que cette approximation est variable dans le temps, en raison des grandeurs d'influence (vieillissement, température, ...) ou des conditions d'utilisation (effet de charge, perturbations,...). Le fabricant nous indique les valeurs nominales du gain et du décalage $G_{nom}$ et $Of_{nom}$.
 On résout le problème de mesure sur la base de ces valeurs nominales, et l'on obtient alors une estimation $X_{m}$ de la grandeur d'entrée $X$:
 
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{\textit{Déf}. Erreur absolue (e) :}
-Écart entre la valeur mesurée et la vraie valeur 	$e = X_{m} - X$
-\newline
-\newline
-\textbf{\textit{Déf}. Erreur relative ($\epsilon$) : }
-\text{Quotient entre erreur absolue et vraie valeur  }	$\epsilon = \frac{e}{X}  \cong \frac{e}{X_{m}}$
-\end{minipage}
-}
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{\textit{Déf}. Erreur absolue (e) :}
+            Écart entre la valeur mesurée et la vraie valeur 	$e = X_{m} - X$
+            \newline
+            \newline
+            \textbf{\textit{Déf}. Erreur relative ($\epsilon$) : }
+            \text{Quotient entre erreur absolue et vraie valeur  }	$\epsilon = \frac{e}{X}  \cong \frac{e}{X_{m}}$
+        \end{minipage}
+    }
 \end{center}
 
 Pour analyser l'erreur, il faut tenir compte des écarts entre la courbe réelle et son approximation linéaire dans les conditions de mesure, ainsi que du fait que cette approximation diffère légèrement de la droite nominale. Nous écrivons donc une nouvelle expression de la sortie Y
 \begin{equation}
-Y = G_{reel}X + Of_{reel} + L(X,t)
+    Y = G_{reel}X + Of_{reel} + L(X,t)
 \end{equation}
 où $G_{reel}$ et $Of_{reel}$ représentent le modèle linéaire actuel, tenant compte des grandeurs d'influence et effets de charge. $L(X,t)$ représente l'écart entre la courbe et la droite du modèle actuel, ainsi que le bruit ajouté à la sortie. On ne connaît jamais ces trois termes, mais un étalonnage dans des conditions données des grandeurs d'influence permet au fabricant de spécifier les écarts maximum. Exprimons l'erreur:
 \begin{gather}
-e = X_m - X =  Y - \frac{Of_{nom}}{G_{nom}} - X = \frac{G_{reel}X + Of_{reel} + L -Of_{nom}}{G_{nom}} - X\\
-e = X \cdot(\frac{G_{reel}}{G_{nom}}   - 1) +  \frac{Of_{reel} - Of_{nom}}{G_{nom}}   +  \frac{L}{G_{nom}}
+    e = X_m - X =  Y - \frac{Of_{nom}}{G_{nom}} - X = \frac{G_{reel}X + Of_{reel} + L -Of_{nom}}{G_{nom}} - X\\
+    e = X \cdot(\frac{G_{reel}}{G_{nom}}   - 1) +  \frac{Of_{reel} - Of_{nom}}{G_{nom}}   +  \frac{L}{G_{nom}}
 \end{gather}
 c.-à-d.
 \begin{equation}
-e = X \cdot \alpha  + D + NL
+    e = X \cdot \alpha  + D + NL
 \end{equation}
 On constate alors que l'erreur est la somme de trois termes. Les deux premiers expriment des erreurs systématiques fonctions des grandeurs d'influence (dérive du modèle linéaire par rapport aux valeurs nominales), le troisième peut être assimilé à une erreur aléatoire.
 \begin{center}
-\fbox{
-\begin{minipage}{0.95\textwidth}
-\textbf{\textit{Déf}. Erreur de gain  ($\alpha$) :}\\
-Erreur relative du gain de la chaîne: Gréel - GnomGnom  .  Correspond à une rotation de la courbe autour de l'origine. Provoque une erreur systématique proportionnelle au mesurande (calculable seulement si l'on connaît toutes les grandeurs d'influence)\\
-\\
-\textbf{\textit{Déf}. Erreur de décalage (D) :}\\
-Erreur absolue à l'origine: Ofréel - OfnomGnom  . Correspond à une translation verticale de la courbe de réponse. Provoque une erreur systématique constante, indépendante de X (calculable seulement si l'on connaît toutes les grandeurs d'influence)\\
-\\
-\textbf{\textit{Déf}. Erreur de non-linéarité (NL)}\\
-Écart entre la droite du modèle actuel et la courbe réelle de réponse. Fonction du mesurande, si bien qu'on la considère comme une grandeur aléatoire.
-\end{minipage}
-}
+    \fbox{
+        \begin{minipage}{0.95\textwidth}
+            \textbf{\textit{Déf}. Erreur de gain  ($\alpha$) :}\\
+            Erreur relative du gain de la chaîne: Gréel - GnomGnom  .  Correspond à une rotation de la courbe autour de l'origine. Provoque une erreur systématique proportionnelle au mesurande (calculable seulement si l'on connaît toutes les grandeurs d'influence)\\
+            \\
+            \textbf{\textit{Déf}. Erreur de décalage (D) :}\\
+            Erreur absolue à l'origine: Ofréel - OfnomGnom  . Correspond à une translation verticale de la courbe de réponse. Provoque une erreur systématique constante, indépendante de X (calculable seulement si l'on connaît toutes les grandeurs d'influence)\\
+            \\
+            \textbf{\textit{Déf}. Erreur de non-linéarité (NL)}\\
+            Écart entre la droite du modèle actuel et la courbe réelle de réponse. Fonction du mesurande, si bien qu'on la considère comme une grandeur aléatoire.
+        \end{minipage}
+    }
 \end{center}
 Le fabricant indique l'incertitude de la chaîne ou d'un appareil en combinant ces trois erreurs et le bruit interne.
 
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{\textit{Déf}. Incertitude de mesure :	}
-Valeur limite que peut prendre l'erreur (en valeur absolue), avec un certain degré de confiance, en général 99 \%. En d'autres termes, si l'on a spécifié une incertitude I, la valeur absolue de l'erreur e sera dans 99 \% des cas inférieure à I : 	|e| < I 	(99 fois sur 100)
-\end{minipage}
-}
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{\textit{Déf}. Incertitude de mesure :	}
+            Valeur limite que peut prendre l'erreur (en valeur absolue), avec un certain degré de confiance, en général 99 \%. En d'autres termes, si l'on a spécifié une incertitude I, la valeur absolue de l'erreur e sera dans 99 \% des cas inférieure à I : 	|e| < I 	(99 fois sur 100)
+        \end{minipage}
+    }
 \end{center}
 
 \begin{figure}
-\centering
-\includegraphics[height=8cm]{assets/figures/3_1_Non_Linearite.PNG}
-\caption{Non-linéarité.}
-\label{fig:Non-linéarité}
+    \centering
+    \includegraphics[height=8cm]{assets/figures/3_1_Non_Linearite.PNG}
+    \caption{Non-linéarité.}
+    \label{fig:Non-linéarité}
 \end{figure}
 La spécification de l'incertitude comprend deux termes, pour tenir compte du fait que l'une des composantes est proportionnelle à X. L'erreur de gain est toujours spécifiée sous forme d'une valeur relative $\alpha$ (en \%, \textperthousand ~ ou ppm, soit des facteurs de $10^{-2}, 10^{-3}, ou 10^{-6}$), alors que l'effet global du décalage, des non-linéarités et du bruit interne est spécifié comme un terme indépendant de X, soit sous forme absolue B (unités de X, ou unités d'affichage: divisions sur un écran analogique, digit sur un affichage numérique), soit sous forme relative $\beta$ par rapport à une grandeur caractéristique de la chaîne: gamme de mesure, étendue de mesure, ou pleine échelle.
 \begin{equation}
-I = \alpha \cdot \text{lect} + B \cdot digit = \alpha \cdot \text{lect} + \beta \cdot \text{gamme}
+    I = \alpha \cdot \text{lect} + B \cdot digit = \alpha \cdot \text{lect} + \beta \cdot \text{gamme}
 \end{equation}
 
 \begin{figure}[h]
-\centering
-\includegraphics[height=10.7cm]{assets/figures/incertitudes.pdf}
-\caption{Évolution des incertitudes absolues et relatives en fonction du mesurande.}
-\label{fig:incertitudes_absolues_et_relatives}
+    \centering
+    \includegraphics[height=10.7cm]{assets/figures/incertitudes.pdf}
+    \caption{Évolution des incertitudes absolues et relatives en fonction du mesurande.}
+    \label{fig:incertitudes_absolues_et_relatives}
 \end{figure}
 
 La figure \ref{fig:incertitudes_absolues_et_relatives} nous montre que l'incertitude absolue est maximum en haut de gamme, alors que l'incertitude relative tend vers l'infini lorsque X tend vers zéro. Lorsqu'on doit évaluer l'imprécision d'un système de mesure, on le fera soit en estimant l'incertitude absolue en haut de gamme, soit l'incertitude relative en bas de gamme (recherche du pire des cas).
@@ -111,23 +111,23 @@ Par ailleurs, lorsqu'on cherche à faire une mesure d'une grandeur avec un appar
 Sur de nombreuses chaînes de mesure on dispose d'un amplificateur avec lequel on peut ajuster le gain et le décalage. On est alors amené, au moment de la mise en service de la chaîne, à ajuster cet amplificateur, de manière à obtenir la réponse la plus proche que possible de l'idéal (modèle nominal). C'est ce qu'on appelle le calibrage (en anglais: gauging ou calibration), opération qui vise à annuler les erreurs de gain et de décalage. Une autre opération consiste, sans modifier la chaîne, à déterminer son modèle réel, et l'écart entre le modèle réel et le modèle nominal. C'est l'opération d'étalonnage(en anglais: calibration). Cette opération peut être faite dans un but de correction ou de vérification. Dans ce dernier cas, la chaîne est acceptée si elle se trouve dans les tolérances, ou rejetée sinon. Dans le cas de la correction, alors un moteur de correction sera mis en oeuvre par l'utilisateur de la chaîne de mesure pour exploiter non pas le modèle nominal, mais le modèle réel mesuré.
 On notera que la terminologie française est cette fois plus précise que la terminologie anglaise où la distinction entre calibrage et étalonnage ne se fait pas. Ce flou se retrouve en français lorsqu'on utilise l'anglicisme "calibration", alors que ce terme s'applique normalement à des méthodes de datation en dendrochronologie.
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{\textit{Déf}. Étalonnage :	}
-Ensemble des opérations permettant de déterminer le modèle réel de la chaîne de mesure, et donc de déterminer les erreurs de mesure par rapport au modèle nominal.\\
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{\textit{Déf}. Étalonnage :	}
+            Ensemble des opérations permettant de déterminer le modèle réel de la chaîne de mesure, et donc de déterminer les erreurs de mesure par rapport au modèle nominal.\\
 
-\textbf{\textit{Déf}. Calibrage :	}
-Ensemble des opérations d'ajustage des différents réglages de la chaîne, pour l'amener à un fonctionnement aussi juste que possible, c'est-à-dire aussi proche que possible du modèle nominal.
-\end{minipage}
-}
+            \textbf{\textit{Déf}. Calibrage :	}
+            Ensemble des opérations d'ajustage des différents réglages de la chaîne, pour l'amener à un fonctionnement aussi juste que possible, c'est-à-dire aussi proche que possible du modèle nominal.
+        \end{minipage}
+    }
 \end{center}
 
 Dans ces opérations, il faut imposer à l'entrée de la chaîne une valeur connue du mesurande, et observer la sortie de la chaîne. Quatre situations peuvent se présenter :
 \begin{enumerate}[a)]
-\item Dans de très rares cas, on dispose d'un moyen d'imposer une valeur exacte (par exemple une tension nulle au moyen d'un court-circuit).
-\item Parfois on dispose d'un étalon (par exemple 0 \degree C au moyen d'un mélange d'eau et de glace fondante), et la valeur imposée n'est connue qu'avec une certaine incertitude.
-\item Dans la majorité des cas, il faut mesurer la grandeur d'entrée avec des instruments de précision, et  régler la valeur désirée, ce qui conduit également à une incertitude sur cette valeur.
-\item Enfin il peut être impossible d'imposer une grandeur d'entrée connue et stable (par exemple 1200 \degree C), on procède alors par simulation du capteur en générant la grandeur électrique qu'il est censé produire (résistance, charge électrique, tension, etc.) sous l'effet de la grandeur physique désirée; l'incertitude provient alors d'une part de la qualité des générateurs, d'autre part de celle du capteur (on simule un capteur parfait, alors que le capteur réel ne l'est pas).
+    \item Dans de très rares cas, on dispose d'un moyen d'imposer une valeur exacte (par exemple une tension nulle au moyen d'un court-circuit).
+    \item Parfois on dispose d'un étalon (par exemple 0 \degree C au moyen d'un mélange d'eau et de glace fondante), et la valeur imposée n'est connue qu'avec une certaine incertitude.
+    \item Dans la majorité des cas, il faut mesurer la grandeur d'entrée avec des instruments de précision, et  régler la valeur désirée, ce qui conduit également à une incertitude sur cette valeur.
+    \item Enfin il peut être impossible d'imposer une grandeur d'entrée connue et stable (par exemple 1200 \degree C), on procède alors par simulation du capteur en générant la grandeur électrique qu'il est censé produire (résistance, charge électrique, tension, etc.) sous l'effet de la grandeur physique désirée; l'incertitude provient alors d'une part de la qualité des générateurs, d'autre part de celle du capteur (on simule un capteur parfait, alors que le capteur réel ne l'est pas).
 \end{enumerate}
 L'idéal recherché généralement est de connaître le mesurande avec une incertitude inférieure à $1/10$ de l'incertitude de la chaîne à étalonner ou à calibrer.
 
@@ -142,47 +142,47 @@ L'ajustage des potentiomètres ne sera jamais exact : les bruits internes dans l
 Ainsi on applique généralement le mesurande X et on effectue plusieurs mesures Y qui permettent de déterminer une moyenne de la valeur appliquée et une moyenne de la valeur mesurée, ainsi que les minima et maxima. On détermine ainsi un rectangle d'incertitude. On établit ensuite un rectangle d'incertitude centré sur la valeur moyenne en maximisant les écarts autour de la valeur moyenne. Les valeurs moyennes permettront de déterminer le modèle réel.
 
 \begin{figure}
-\centering
-\includegraphics[width=12cm]{assets/figures/3_3_explications.PNG}
-\caption{Un point de mesure, avec les incertitudes sur la valeur appliquée X et sur la valeur mesurée Y.}
-\label{fig:3_3_explications}
+    \centering
+    \includegraphics[width=12cm]{assets/figures/3_3_explications.PNG}
+    \caption{Un point de mesure, avec les incertitudes sur la valeur appliquée X et sur la valeur mesurée Y.}
+    \label{fig:3_3_explications}
 \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[width=12cm]{assets/figures/3_3a_reel_versus_nominal.PNG}
-\caption{Mesure après calibrage: modèles nominal et réel.}
-\label{fig:3_3a_reel_versus_nominal}
+    \centering
+    \includegraphics[width=12cm]{assets/figures/3_3a_reel_versus_nominal.PNG}
+    \caption{Mesure après calibrage: modèles nominal et réel.}
+    \label{fig:3_3a_reel_versus_nominal}
 \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[width=12cm]{assets/figures/3_3b_incertitude_de_offset.PNG}
-\caption{Mesure après calibrage: incertitude sur l'offset.}
-\label{fig:3_3b_incertitude_de_offset}
+    \centering
+    \includegraphics[width=12cm]{assets/figures/3_3b_incertitude_de_offset.PNG}
+    \caption{Mesure après calibrage: incertitude sur l'offset.}
+    \label{fig:3_3b_incertitude_de_offset}
 \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[width=12cm]{assets/figures/3_3c_incertitude_de_gain.PNG}
-\caption{Mesure après calibrage: incertitude sur le gain.}
-\label{fig:3_3b_incertitude_de_gain}
+    \centering
+    \includegraphics[width=12cm]{assets/figures/3_3c_incertitude_de_gain.PNG}
+    \caption{Mesure après calibrage: incertitude sur le gain.}
+    \label{fig:3_3b_incertitude_de_gain}
 \end{figure}
 
 En résumé, le calibrage consiste à :
 
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{ }
-\begin{itemize}
-\item Imposer un mesurande $X_0$ nul correspondant au zéro de mesure, et ajuster le décalage de la chaîne pour obtenir l'offset du modèle nominal ; le zéro est le point sur lequel le gain n'a pas d'effet.
-\item Imposer la valeur maximum $X_{max}$ de mesure et ajuster le gain (span) de la chaîne pour obtenir la valeur correspondante selon le modèle nominal.
-\item Déterminer les incertitudes sur les valeurs ajustées et en déduire les incertitudes de calibrage:	$D_{c} = \Delta X_{o} + \frac{\Delta Y_{o}}{G} $ et
-$\alpha _{c} = \frac{D_{c} + \Delta X_{max} + \frac{\Delta Y_{max}}{G}}{X_{max} -X_{o}} $
-\end{itemize}
-\end{minipage}
-}
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{ }
+            \begin{itemize}
+                \item Imposer un mesurande $X_0$ nul correspondant au zéro de mesure, et ajuster le décalage de la chaîne pour obtenir l'offset du modèle nominal ; le zéro est le point sur lequel le gain n'a pas d'effet.
+                \item Imposer la valeur maximum $X_{max}$ de mesure et ajuster le gain (span) de la chaîne pour obtenir la valeur correspondante selon le modèle nominal.
+                \item Déterminer les incertitudes sur les valeurs ajustées et en déduire les incertitudes de calibrage:	$D_{c} = \Delta X_{o} + \frac{\Delta Y_{o}}{G} $ et
+                      $\alpha _{c} = \frac{D_{c} + \Delta X_{max} + \frac{\Delta Y_{max}}{G}}{X_{max} -X_{o}} $
+            \end{itemize}
+        \end{minipage}
+    }
 \end{center}
 
 Après une opération de calibrage, on peut généralement considérer que les erreurs de gain et de décalage ont été annulées. Par conséquent, pour les mêmes valeurs des grandeurs d'influence (raisonnablement quelques minutes à quelques heures après le calibrage) seules interviennent les erreurs de non-linéarité et le bruit interne. C'est pourquoi un calibrage préalable est très souvent utilisé dans les procédures de mesure. Dans ce cas on utilisera comme référence le modèle nominal.
@@ -197,26 +197,26 @@ Ici, il faut établir un tableau de mesure, couvrant toute l'étendue de mesure.
 
 Pour chaque couple mesuré $(X(i), Y(i))$, on peut déterminer l'erreur
 \[
-e(i) = X_m(i) - X(i) = \frac{Y(i) - Of_{nom}}{G_{nom}}   -X(i)
+    e(i) = X_m(i) - X(i) = \frac{Y(i) - Of_{nom}}{G_{nom}}   -X(i)
 \]
 mais ceci ne nous permet pas de bien séparer les composantes de l'erreur.
 
 Il convient donc de déterminer le modèle actuel de la chaîne, c'est-à-dire $G_{réel}$ et $Of_{réel}$, après quoi on pourra séparer les composantes d'erreur (gain, décalage, non-linéarité et bruit). La manière de définir la droite de réponse influence quelque peu les résultats, si bien qu'il est indispensable d'utiliser une définition commune, si l'on veut comparer les résultats (par exemple avec les spécifications individuelles des composants de la chaîne). On utilise généralement deux méthodes de choix de cette droite:
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{Droite par les extrêmes (End points linearity) :}
-la droite passe par deux points de la courbe de réponse réelle (en général le zéro et la pleine échelle, ou encore les deux extrémités du domaine de mesure).\\
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{Droite par les extrêmes (End points linearity) :}
+            la droite passe par deux points de la courbe de réponse réelle (en général le zéro et la pleine échelle, ou encore les deux extrémités du domaine de mesure).\\
 
-\textbf{Meilleure droite (Best fit linearity) :}
-C'est la droite de régression linéaire, elle minimise la somme des carrés des écarts entre la courbe de réponse réelle et la droite ainsi définie.
-\end{minipage}
-}
+            \textbf{Meilleure droite (Best fit linearity) :}
+            C'est la droite de régression linéaire, elle minimise la somme des carrés des écarts entre la courbe de réponse réelle et la droite ainsi définie.
+        \end{minipage}
+    }
 \end{center}
 
 Le gain réel $G_{reel}$ est la pente de la droite ainsi choisie. Le décalage réel $D_{reel}$ est l'ordonnée à l'origine de la droite. Pour chaque couple mesuré $(X(i),Y(i))$ on détermine l'écart entre la valeur mesurée et la droite $\Delta = Y(i) - [G_{reel}\cdot X(i) + Of_{reel}]$. Cet écart est une combinaison de l'erreur de non-linéarité et du bruit. Pour une utilisation immédiate après le calibrage, cet écart représente l'erreur résiduelle du montage, et on en spécifie la limite maximum en valeur absolue, dans l'unité du mesurande, ce qui revient à diviser $max{|\Delta|}$ par le gain de la chaîne:
 \[
-	NL+Bruit = \frac{max{|\Delta|}}{G_{reel}}
+    NL+Bruit = \frac{max{|\Delta|}}{G_{reel}}
 \]
 Une séparation du bruit et de la non-linéarité n'est généralement pas nécessaire.
 Les erreurs de gain et de décalage du modèle réel par rapport au modèle nominal se calculent en comparant $G_{reel}$ et $Of_{reel}$ avec $G_nom$ et $Of_nom$ :
@@ -238,19 +238,19 @@ Au lieu d'un auto calibrage, il est parfois plus efficace de faire une compensat
 L'identification consiste à déterminer les coefficients d'influence agissant sur le gain et le décalage de la chaîne. Généralement on se contente de déterminer $G_r$ et $Of_r$ aux deux valeurs extrêmes d'utilisation. En faisant l'hypothèse que l'évolution du gain et celle du décalage sont linéairement dépendantes de la grandeur d'influence, on définit les coefficients d'influence :
 
 \begin{center}
-\fbox{
-\begin{minipage}{0.96\textwidth}
-\textbf{\textit{Déf}. Coefficient d'influence sur le gain : }
-variation relative du gain par unité de la grandeur d'influence. Représente l'erreur de gain additionnelle due à la grandeur d'influence $Z_i : d\alpha / dZ_i = (dG_r/G_r)/dZ_i$ (proportionnelle à X : exprimée en$ \%/unité de Z_i$)
-\\
-\\
-\textbf{\textit{Déf}. Coefficient d'influence sur le décalage :}
-variation d'offset par unité de la grandeur d'influence. Représente l'erreur de décalage additionnelle due à la grandeur d'influence $Z_i$ : \\
-\begin{equation}
-{dD}{dZ_i} = \frac{(dOf_r/G_r)}{dZ_i}\text{ }[\frac{unites de X}{unites de Z_i}]
-\end{equation}
-\end{minipage}
-}
+    \fbox{
+        \begin{minipage}{0.96\textwidth}
+            \textbf{\textit{Déf}. Coefficient d'influence sur le gain : }
+            variation relative du gain par unité de la grandeur d'influence. Représente l'erreur de gain additionnelle due à la grandeur d'influence $Z_i : d\alpha / dZ_i = (dG_r/G_r)/dZ_i$ (proportionnelle à X : exprimée en$ \%/unité de Z_i$)
+            \\
+            \\
+            \textbf{\textit{Déf}. Coefficient d'influence sur le décalage :}
+            variation d'offset par unité de la grandeur d'influence. Représente l'erreur de décalage additionnelle due à la grandeur d'influence $Z_i$ : \\
+            \begin{equation}
+                {dD}{dZ_i} = \frac{(dOf_r/G_r)}{dZ_i}\text{ }[\frac{unites de X}{unites de Z_i}]
+            \end{equation}
+        \end{minipage}
+    }
 \end{center}
 
 Pour effectuer la correction, il suffit alors de mesurer $Z_i$ (chaîne auxiliaire), d'en déduire la variation par rapport à la valeur de $Z_i$ au moment du calibrage, et de multiplier les coefficients d'influence par cet écart pour connaître la variation de gain ou de décalage par rapport au calibrage.
@@ -258,24 +258,24 @@ Pour effectuer la correction, il suffit alors de mesurer $Z_i$ (chaîne auxiliai
 À titre d'exemple, prenons un capteur de pression intégré. La grandeur d'influence est la température T. On commence par étalonner le capteur aux deux températures extrêmes d'utilisation, ici environ 25 et 60 \degre C. Une telle mesure est présentée sur le graphique ci-dessous.
 
 \begin{figure}
-\centering
-\includegraphics[height=10cm]{assets/figures/3_5_identification_reponse_en_temperature.PNG}
-\caption{ Identification de la réponse du capteur aux températures extrêmes.}
-\label{fig:IdentificationTemperature}
+    \centering
+    \includegraphics[height=10cm]{assets/figures/3_5_identification_reponse_en_temperature.PNG}
+    \caption{ Identification de la réponse du capteur aux températures extrêmes.}
+    \label{fig:IdentificationTemperature}
 \end{figure}
 
 On en déduit les coefficients d'influence, en prenant les valeurs exactes mesurées à une température de calibrage, ici 25.8 \degre C :
 Gain:
 \[
-\frac{d\alpha}{dT} = \frac{dGr/Gr}{dT} = \frac{(96.324-103.968)/103.968}{ (61.1-25.8)} =\]
+    \frac{d\alpha}{dT} = \frac{dGr/Gr}{dT} = \frac{(96.324-103.968)/103.968}{ (61.1-25.8)} =\]
 \begin{equation}
-= \frac{-0.0735}{35.3} = -0.002083 = -0.21 \% \text{/ \degre C}
+    = \frac{-0.0735}{35.3} = -0.002083 = -0.21 \% \text{/ \degre C}
 \end{equation}
 
 Décalage:
 \begin{equation}
-\frac{dD}{dT} = \frac{(dOfr/Gr)}{dT} = \frac{(2.724-3.979)/103.968}{(61.1-25.8)} =
- \frac{-0.012 bar}{ 35.3 \text{\degre C}} = -0.34 \text{mbar/ \degre C}
+    \frac{dD}{dT} = \frac{(dOfr/Gr)}{dT} = \frac{(2.724-3.979)/103.968}{(61.1-25.8)} =
+    \frac{-0.012 bar}{ 35.3 \text{\degre C}} = -0.34 \text{mbar/ \degre C}
 \end{equation}
 
 Par conséquent, si l'on mesure alors que la température est de 38.0 \degre C, nous avons un écart de température de (38.0 - 25.8) = 12.2 \degre C et les erreurs additionnelles de gain et de décalage par rapport aux valeurs de calibrage (gain 103.968 mV/bar et offset 3.979 mV) seront de :
@@ -302,18 +302,18 @@ La puissance de calcul des microprocesseurs incorporés aux capteurs dits \textl
 À titre d'exemple, la norme IEEE-1451 / Smart Transducers, définit une fonction multi - variables, de type polynomial, et décomposable par segments :
 
 \begin{equation}
-\displaystyle\sum_{i=0}^{D(1)}
-\displaystyle\sum_{j=0}^{D(2)} \text{...}
-\displaystyle\sum_{p=0}^{D(n)} C_{i,j,...,p} [X_1-H_1]^i[X_2-H_2]^j \text{...} [X_n-H_n]^p
+    \displaystyle\sum_{i=0}^{D(1)}
+    \displaystyle\sum_{j=0}^{D(2)} \text{...}
+    \displaystyle\sum_{p=0}^{D(n)} C_{i,j,...,p} [X_1-H_1]^i[X_2-H_2]^j \text{...} [X_n-H_n]^p
 \end{equation}
 
 Le calcul de correction ci-dessus représente une somme polynomiale de n variables, dont on peut choisir indépendamment les degrés de chaque variable. Dans le cas de la compensation linéaire de température, nous aurions $X_1$ = sortie en mV du capteur de pression, $X_2$ = sortie du capteur de température, les degrés D(1) et D(2) seraient tous deux égaux à 1 (linéaire), et la formule permet de calculer la valeur de pression. Par conséquent la formule de calcul devient :
 \begin{equation}
-P_m =C_{00} + C_{10} \cdot (X_1-H_1)+C_{01} \cdot (X_2-H_2) + C_{11}\cdot(X_1-H_1) \cdot (X_2-H_2)
+    P_m =C_{00} + C_{10} \cdot (X_1-H_1)+C_{01} \cdot (X_2-H_2) + C_{11}\cdot(X_1-H_1) \cdot (X_2-H_2)
 \end{equation}
 
 \begin{equation*}
-= C_{00} + C_{01} \cdot X_2 + X_1 \cdot (C_{10} + C_{11} \cdot X_2)  \text{ si les termes $H_1$ et $H_2$ sont nuls }
+    = C_{00} + C_{01} \cdot X_2 + X_1 \cdot (C_{10} + C_{11} \cdot X_2)  \text{ si les termes $H_1$ et $H_2$ sont nuls }
 \end{equation*}
 
 On voit bien qu'ainsi on a bien un décalage $(C_{00} + C_{01} \cdot X_2)$ dépendant de $X_2=T$ et un gain $(C_{10} + C_{11} \cdot X_2)$ également dépendant de T. Par contre cette méthode permet des corrections bien plus évoluées (polynômes et compensation de plusieurs grandeurs d'influence).
@@ -321,10 +321,10 @@ On voit bien qu'ainsi on a bien un décalage $(C_{00} + C_{01} \cdot X_2)$ dépe
 Pour de grands domaines ou pour de fortes non-linéarités, afin d'éviter des polynômes de degré trop élevé, la norme prévoit de segmenter la réponse selon les valeurs des différentes variables, et d'exploiter un ensemble de paramètres de faible degré dans chaque segment, comme illustré dans la figure ci-dessous.
 
 \begin{figure}
-\centering
-\includegraphics[height=6cm]{assets/figures/3_6_Correction_a_2_variables_segementees.PNG}
-\caption{Correction à deux variables segmentées.}
-\label{fig:Correction_a_2_variables_segementees}
+    \centering
+    \includegraphics[height=6cm]{assets/figures/3_6_Correction_a_2_variables_segementees.PNG}
+    \caption{Correction à deux variables segmentées.}
+    \label{fig:Correction_a_2_variables_segementees}
 \end{figure}
 
 A chaque élément de surface (désigné par "Cell") correspond un ensemble de paramètres $C_{ij}$ et $H_x$ permettant d'approcher la surface réelle en minimisant le nombre total de paramètres à mémoriser.
@@ -336,41 +336,41 @@ Lors de mesures répétées de la même valeur du mesurande X, on constate que l
 \newpage
 On a donc :
 \begin{itemize}
-\item X, le mesurande
-\item La moyenne des mesures $\mu$
-\item L'erreur de biais $\beta :  \beta = \mu - X$  [unité de X], erreur systématique
-\item L'exactitude ou la justesse, termes utilisés pour caractériser l'erreur systématique
-\item L'écart-type $\sigma$ sert à quantifier l'erreur aléatoire
-\item La répétabilité ou la fidélité, termes utilisés pour caractériser l'erreur aléatoire
+    \item X, le mesurande
+    \item La moyenne des mesures $\mu$
+    \item L'erreur de biais $\beta :  \beta = \mu - X$  [unité de X], erreur systématique
+    \item L'exactitude ou la justesse, termes utilisés pour caractériser l'erreur systématique
+    \item L'écart-type $\sigma$ sert à quantifier l'erreur aléatoire
+    \item La répétabilité ou la fidélité, termes utilisés pour caractériser l'erreur aléatoire
 \end{itemize}
 
 \begin{equation}
-\mu = \lim\limits_{N \to \infty} \frac{1}{N} \sum_{i=1}^N x_i
+    \mu = \lim\limits_{N \to \infty} \frac{1}{N} \sum_{i=1}^N x_i
 \end{equation}
 
 \begin{equation}
-\sigma = \lim\limits_{N \to \infty} \sqrt{\frac{1}{N}\sum_{i=1}^N (x_i-\mu)^2}
+    \sigma = \lim\limits_{N \to \infty} \sqrt{\frac{1}{N}\sum_{i=1}^N (x_i-\mu)^2}
 \end{equation}
 
 \begin{figure}
-\centering
-\includegraphics[height=7cm]{assets/figures/3_7_Exemple_de_mesures_repetees_N_fois.PNG}
-\caption{Exemple de mesures répétées N fois, où N >100 pour être significatif.}
-\label{fig:Exemple_de_mesures_repetees_N_fois}
+    \centering
+    \includegraphics[height=7cm]{assets/figures/3_7_Exemple_de_mesures_repetees_N_fois.PNG}
+    \caption{Exemple de mesures répétées N fois, où N >100 pour être significatif.}
+    \label{fig:Exemple_de_mesures_repetees_N_fois}
 \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[height=7cm]{assets/figures/3_8_distinction_entre_repetabiite_et_justesse.PNG}
-\caption{distinction entre répétabilité et justesse.}
-\label{fig:distinction_entre_repetabiite_et_justesse}
+    \centering
+    \includegraphics[height=7cm]{assets/figures/3_8_distinction_entre_repetabiite_et_justesse.PNG}
+    \caption{distinction entre répétabilité et justesse.}
+    \label{fig:distinction_entre_repetabiite_et_justesse}
 \end{figure}
 
 \begin{figure}
-\centering
-\includegraphics[height=7cm]{assets/figures/juste-fidèle-précis.pdf}
-\caption{Autre représentation des notions de justesse et fidélité.}
-\label{fig:juste_fidele_precis}
+    \centering
+    \includegraphics[height=7cm]{assets/figures/juste-fidèle-précis.pdf}
+    \caption{Autre représentation des notions de justesse et fidélité.}
+    \label{fig:juste_fidele_precis}
 \end{figure}
 
 L'écart-type sert à mesurer la dispersion d'un ensemble de données. Plus il est faible, plus les valeurs sont regroupées autour de la moyenne. Par exemple pour la répartition des notes d'une classe, plus l'écart type est faible, plus la classe est homogène. ¿ l'inverse, s'il est plus important, les notes sont moins resserrées. Dans le cas d'une notation de 0 à 20, l'écart-type minimal est 0 (notes toutes identiques), et peut valoir jusqu'à 10 si la moitié de la classe a 0/20 et l'autre moitié 20/20.
@@ -382,18 +382,18 @@ L'écart-type est aussi utilisé pour construire un intervalle de confiance attr
 En pratique, on considère que :
 \begin{itemize}
 
-\item $1 * \sigma \rightarrow 68\% $
-\item $2 * \sigma \rightarrow 95\% $
-\item $3 * \sigma \rightarrow 99.7\%$
+    \item $1 * \sigma \rightarrow 68\% $
+    \item $2 * \sigma \rightarrow 95\% $
+    \item $3 * \sigma \rightarrow 99.7\%$
 
 \end{itemize}
 
 
 \begin{figure}
-\centering
-\includegraphics[height=7cm]{assets/figures/3_9_Loi_normale_et_intervale_de_confiance.PNG}
-\caption{Loi normale et intervalle de confiance.}
-\label{fig:3_9_Loi_normale_et_intervale_de_confiance}
+    \centering
+    \includegraphics[height=7cm]{assets/figures/3_9_Loi_normale_et_intervale_de_confiance.PNG}
+    \caption{Loi normale et intervalle de confiance.}
+    \label{fig:3_9_Loi_normale_et_intervale_de_confiance}
 \end{figure}
 
 \section{Exercices }
@@ -404,51 +404,51 @@ Spécifications:\\
 \textbf{HP34401A}: spécifié pour 1 an, $23 \pm 5 \degree C$, en (\%lect+ \%gamme) et jusqu'à 20\% de dépassement de gamme\\
 \\
 \begin{tabular}{l c c}
-\hline
-gamme: 	& 100.0000 mV	& 0.0050 + 0.0035 \\
-		& 1.000000 V	& 0.0040 + 0.0007 \\
-    	& 10.00000 V	& 0.0035 + 0.0005 \\
-		& 100.0000 V	& 0.0045 + 0.0006 \\
-		& 1000.000 V	& 0.0045 + 0.0010 \\
-\hline
+    \hline
+    gamme: & 100.0000 mV & 0.0050 + 0.0035 \\
+           & 1.000000 V  & 0.0040 + 0.0007 \\
+           & 10.00000 V  & 0.0035 + 0.0005 \\
+           & 100.0000 V  & 0.0045 + 0.0006 \\
+           & 1000.000 V  & 0.0045 + 0.0010 \\
+    \hline
 \end{tabular}
 \\
 \\
 \textbf{Prema} 6000:spécifs pour 1 an, $23 \pm 5 \degree C$, en (\% of reading + \% of full scale)
-	Full scale : 1'999'999 (sauf gamme 1000 V : 1'000'000)
+Full scale : 1'999'999 (sauf gamme 1000 V : 1'000'000)
 \\
 \begin{tabular}{lcc}
-\hline
-range & $\pm$ 0.2 V & 0.006 + 0.0007 \\
-	& $\pm$ 2 V	& 0.005 + 0.0005 \\
-	& $\pm$ 20 V	& 0.005 + 0.0006 \\
-	& $\pm$ 200 V	& 0.005 + 0.0006 \\
-	& $\pm$ 1000 V	& 0.006 + 0.0005 \\
-\hline
+    \hline
+    range & $\pm$ 0.2 V  & 0.006 + 0.0007 \\
+          & $\pm$ 2 V    & 0.005 + 0.0005 \\
+          & $\pm$ 20 V   & 0.005 + 0.0006 \\
+          & $\pm$ 200 V  & 0.005 + 0.0006 \\
+          & $\pm$ 1000 V & 0.006 + 0.0005 \\
+    \hline
 \end{tabular}
 \\
 \\
 \textbf{APPA-98}: spécifié pour 2 ans, $23 \pm 5 \degree C$ et moins de 75\% humidité relative, en (\% reading + number of digits)
 \\
 \begin{tabular}{lcl}
-\hline
-	Range	& Resolution	& Accuracy \\
-	200 mV	& 100 $\mu$V	& | \\
-	2 V	& 1 mV	& | \\
-	20 V	& 10 mV	& |  $\pm$ (0.5 \%rdg + 1 dgt) \\
-	200 V	& 100 mV	& | \\
-	1000 V	& 1 V	& | \\
-\hline
+    \hline
+    Range  & Resolution & Accuracy                     \\
+    200 mV & 100 $\mu$V & |                            \\
+    2 V    & 1 mV       & |                            \\
+    20 V   & 10 mV      & |  $\pm$ (0.5 \%rdg + 1 dgt) \\
+    200 V  & 100 mV     & |                            \\
+    1000 V & 1 V        & |                            \\
+    \hline
 \end{tabular}
 \\
 
 \begin{enumerate}
-\item Quelles sont les incertitudes absolues et relatives si on mesure 2.2 V avec HP34401A ?
-\item Quelles sont les incertitudes absolues et relatives si on mesure 2.2 V avec APPA-98 ?
-\item Quelle est l'incertitude relative maximum si on mesure entre 10 et 250 mV avec HP34401A ?
-\item Quelle est l'incertitude relative maximum si on mesure entre 10 et 250 mV avec Prema6000 ?
-\item Quelle est l'incertitude absolue maximum si l'on mesure entre 30 et 500 V avec APPA-98 ?
-\item Représenter les incertitudes relatives du HP34401A et du Prema6000 pour un domaine de 10mV à 1000V (utilisez une échelle Log pour l'axe X des tensions).
+    \item Quelles sont les incertitudes absolues et relatives si on mesure 2.2 V avec HP34401A ?
+    \item Quelles sont les incertitudes absolues et relatives si on mesure 2.2 V avec APPA-98 ?
+    \item Quelle est l'incertitude relative maximum si on mesure entre 10 et 250 mV avec HP34401A ?
+    \item Quelle est l'incertitude relative maximum si on mesure entre 10 et 250 mV avec Prema6000 ?
+    \item Quelle est l'incertitude absolue maximum si l'on mesure entre 30 et 500 V avec APPA-98 ?
+    \item Représenter les incertitudes relatives du HP34401A et du Prema6000 pour un domaine de 10mV à 1000V (utilisez une échelle Log pour l'axe X des tensions).
 \end{enumerate}
 NB: la pleine échelle définie pour le PREMA n'est pas la définition habituelle qui dit que la pleine échelle est la différence entre les valeurs min et max. On aurait alors attendu pour le PREMA une pleine échelle égale au double de la gamme.
 
@@ -479,18 +479,18 @@ a)On a mesuré la réponse d'un capteur de force à $23 \degree C$ (réponse id�
 ~
 \\
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-F [N]	& 0	& 10	& 20	& 30	& 40	& 50	& 60	& 70	& 80	& 90	& 100 \\
-\hline
-U [mV]	& 0.50	& 2.49	& 4.46	& 6.41	& 8.34	& 10.25	& 12.14	& 14.01	& 15.86	& 17.69	& 19.5 \\
-\hline
+    \hline
+    F [N]  & 0    & 10   & 20   & 30   & 40   & 50    & 60    & 70    & 80    & 90    & 100  \\
+    \hline
+    U [mV] & 0.50 & 2.49 & 4.46 & 6.41 & 8.34 & 10.25 & 12.14 & 14.01 & 15.86 & 17.69 & 19.5 \\
+    \hline
 \end{tabular}
 \\
 
 Déterminez l'offset réel en [mV], le gain réel en [mV/N], les erreurs de décalage [N], de gain [\%lect] et l'incertitude de non-linéarité en [N] et en [\%(PE)] de ce montage par les deux méthodes :
 \begin{enumerate}
-\item Choix de la droite de référence par les extrémités de la courbe de réponse
-\item Choix de la "meilleure droite"	 ...
+    \item Choix de la droite de référence par les extrémités de la courbe de réponse
+    \item Choix de la "meilleure droite"	 ...
 \end{enumerate}
 ~\\
 
@@ -498,12 +498,12 @@ b)	L'étalonnage d'une chaîne de mesure de couple, gamme 0 à 100 mNm, sortie 4
 ~
 \\
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-\footnotesize C [mNm]	& 0	& 10	& 20	& 30	& 40	& 50	& 60	& 70	& 80	& 90	& 100 \\
-\hline
+    \hline
+    \footnotesize C [mNm] & 0                    & 10                   & 20                   & 30                   & 40                    & 50                    & 60                    & 70                    & 80                    & 90                    & 100                   \\
+    \hline
 
-\footnotesize I [mA]	& \footnotesize  3.960	& \footnotesize  5.564	& \footnotesize  7.192	& \footnotesize  8.800	& \footnotesize  10.443	& \footnotesize  12.063	& \footnotesize  13.677	& \footnotesize  15.315	& \footnotesize  16.926	& \footnotesize  18.550	& \footnotesize  20.160 \\
-\hline
+    \footnotesize I [mA]  & \footnotesize  3.960 & \footnotesize  5.564 & \footnotesize  7.192 & \footnotesize  8.800 & \footnotesize  10.443 & \footnotesize  12.063 & \footnotesize  13.677 & \footnotesize  15.315 & \footnotesize  16.926 & \footnotesize  18.550 & \footnotesize  20.160 \\
+    \hline
 \end{tabular}
 \\
 
@@ -511,41 +511,41 @@ L'équation nominale de cette chaîne vaut donc $I = 4 [mA] + 0.16 [\frac{mA}{mN
 
 Quelles sont les erreurs de gain et de décalage ainsi que l'incertitude de non-linéraité + bruit dans les 2 cas suivants:
 \begin{enumerate}
-\item Choix de la droite de référence par les extrémités de la courbe de réponse
-\item Choix de la "meilleure droite"	 ...
+    \item Choix de la droite de référence par les extrémités de la courbe de réponse
+    \item Choix de la "meilleure droite"	 ...
 \end{enumerate}
 
 \subsection{Exercice: Auto-Calibrage d'une chaîne}
 
 a)	Pour réaliser l'auto calibrage d'un canal de mesure de courant (nominal 0-20 mA, code numériques 0-2000 digits), on procède comme suit:
 \begin{itemize}
-\item ouverture du circuit de mesure par un interrupteur (donc courant nul), mémorisation du code obtenu :  $N_0=2$ (stable)
-\item Fermeture d'un interrupteur reliant une source de tension de référence ($U_g = 10.000V \pm 0.005V$) au circuit de mesure à travers une résistance de $R_g = 500 \Omega \pm 0.1\%$ (la borne de mesure étant supposée travailler à potentiel nul, le courant nominal ainsi imposé est de 20mA). On mémorise alors le code moyen obtenu sur 10 mesures : $N_1 = 2018.3$, alors que les codes max et min sont 2021 et 2015.
-\item Les mesures seront ensuite corrigées à l'aide de $N_0$ et $N_1$ pour obtenir :
-	\begin{itemize}\itemsep1pt
-	\renewcommand{\labelitemi}{$\bullet$}
-	\item i) une valeur numérique corrigée ;
-	\item ii) une valeur dans l'unité du mesurande ;
-	\end{itemize}
+    \item ouverture du circuit de mesure par un interrupteur (donc courant nul), mémorisation du code obtenu :  $N_0=2$ (stable)
+    \item Fermeture d'un interrupteur reliant une source de tension de référence ($U_g = 10.000V \pm 0.005V$) au circuit de mesure à travers une résistance de $R_g = 500 \Omega \pm 0.1\%$ (la borne de mesure étant supposée travailler à potentiel nul, le courant nominal ainsi imposé est de 20mA). On mémorise alors le code moyen obtenu sur 10 mesures : $N_1 = 2018.3$, alors que les codes max et min sont 2021 et 2015.
+    \item Les mesures seront ensuite corrigées à l'aide de $N_0$ et $N_1$ pour obtenir :
+          \begin{itemize}\itemsep1pt
+                    \renewcommand{\labelitemi}{$\bullet$}
+              \item i) une valeur numérique corrigée ;
+              \item ii) une valeur dans l'unité du mesurande ;
+          \end{itemize}
 \end{itemize}
 NB : si ces corrections sont faites à l'extérieur de la chaîne de mesure, alors on parlera d'auto étalonnage.
 Quelles sont les fonctions mathématiques de correction et quelles sont les incertitudes de calibrage ?\\
 
 b)	Pour programmer l'auto calibrage d'une chaîne de mesure de température dont le capteur (PT100 : $R(T)=100 \Omega (1+0.00385T)$ a une interchangeabilité de 0.2 $\degree$ C + 0.1\%lecture, on a inséré des interrupteurs programmables permettant de déconnecter le capteur et de le remplacer soit par une résistance de$ 100 \Omega \pm 0.1 \Omega$, soit par une résistance de $138.5 \Omega \pm 0.14 \Omega$. La séquence d'auto calibrage est la suivante :
 \begin{itemize}
-\item Capteur remplacé par la résistance de $100 \Omega$, on mémorise la moyenne de 100 conversions: on trouve $M_0=1985.65$, toutes les conversions sont soit 1985, soit 1986.
-\item Capteur remplacé par la résistance de $138.5 \Omega$. On mémorise la moyenne de 100 conversions: $M_1=2825.45$, conversion maximum 2827, minimum 2824.
-\item Pour les mesures, on ne fait qu'une seule conversion $N_x$, et l'on calcule \\
-$T= (N_x - M_0)\frac{100}{M_1 - M_0}$
+    \item Capteur remplacé par la résistance de $100 \Omega$, on mémorise la moyenne de 100 conversions: on trouve $M_0=1985.65$, toutes les conversions sont soit 1985, soit 1986.
+    \item Capteur remplacé par la résistance de $138.5 \Omega$. On mémorise la moyenne de 100 conversions: $M_1=2825.45$, conversion maximum 2827, minimum 2824.
+    \item Pour les mesures, on ne fait qu'une seule conversion $N_x$, et l'on calcule \\
+          $T= (N_x - M_0)\frac{100}{M_1 - M_0}$
 \end{itemize}
 Quelles sont les incertitudes de calibrage ? \\
 
 c)	Une chaîne de mesure de pression est constituée d'un capteur-transmetteur avec les spécifications suivantes : gamme -1 à +3 bar, sortie 4 à 20mA, précision 0.5\%lect + 35 mbar ; le courant de sortie est mesuré par une résistance shunt de $10 \Omega \pm 0.012 \Omega$, et un convertisseur gamme $\pm 0.25V$.
 Pour programmer l'autocalibrage de cette chaîne, on a inséré des interrupteurs programmables permettant de déconnecter le capteur et de le remplacer soit en laissant le circuit ouvert, soit en reliant une résistance de $490 \Omega \pm 0.2 \Omega$ entre la borne positive du shunt et une source de tension de $+10V \pm 15mV$ (courant nominal de 20 mA). La séquence d'auto calibrage est la suivante :
 \begin{itemize}
-\item Capteur déconnecté, circuit ouvert on mémorise la moyenne de 100 conversions: on trouve $M_0=-0.73$ digit, toutes les conversions sont soit -1, soit 0 digit.
-\item Capteur déconnecté, résistance $490 \Omega$ enclenchée. On mémorise la moyenne de 100 conversions: $M_1=1647.32$, conversion maximum 1646, minimum 1649 digit.
-\item Les valeurs de $M_0$ et $M_1$ nous permettent de calculer le gain et l'offset total actuel de la chaîne.
+    \item Capteur déconnecté, circuit ouvert on mémorise la moyenne de 100 conversions: on trouve $M_0=-0.73$ digit, toutes les conversions sont soit -1, soit 0 digit.
+    \item Capteur déconnecté, résistance $490 \Omega$ enclenchée. On mémorise la moyenne de 100 conversions: $M_1=1647.32$, conversion maximum 1646, minimum 1649 digit.
+    \item Les valeurs de $M_0$ et $M_1$ nous permettent de calculer le gain et l'offset total actuel de la chaîne.
 \end{itemize}
 
 Quelles sont les incertitudes de calibrage ?
@@ -557,14 +557,14 @@ a)	On a étalonné une chaîne de mesure de position à deux températures:
 
 \begin {center}
 \begin{tabular}{lll}
-$T_1=25 \degree C$ &	$G_1= 100.3 digit/mm$ &	$Of_1 = 3.4 digit$ \\
-$T_2=75 \degree C$ &	$G_2 = 103.5 digit/mm$ &	$Of_2 = -5.8 digit$ \\
+    $T_1=25 \degree C$ & $G_1= 100.3 digit/mm$  & $Of_1 = 3.4 digit$  \\
+    $T_2=75 \degree C$ & $G_2 = 103.5 digit/mm$ & $Of_2 = -5.8 digit$ \\
 \end{tabular}
 \end{center}
 ~\\
 \begin{itemize}
-\item Déterminer les coefficients d'influence de la température
-\item A une température de 40 $\degree$ C, l'indication obtenue est de 1380 digit. Calculer la position correspondante
+    \item Déterminer les coefficients d'influence de la température
+    \item A une température de 40 $\degree$ C, l'indication obtenue est de 1380 digit. Calculer la position correspondante
 \end{itemize}
 ~\\
 
@@ -572,15 +572,15 @@ $T_2=75 \degree C$ &	$G_2 = 103.5 digit/mm$ &	$Of_2 = -5.8 digit$ \\
 b)	Une chaîne de mesure du contenu d'un réservoir utilise un capteur de force à jauges de contraintes (pont de Wheatstone à 4 jauges)
 
 \begin{figure}[h!]
-\centering
-\includegraphics[height=3.7cm]{assets/figures/Exercice_3_5_c.PNG}
-\caption{Chaîne de mesure du contenu d'un réservoir.}
-\label{fig:Exercice_3_5_c}
+    \centering
+    \includegraphics[height=3.7cm]{assets/figures/Exercice_3_5_c.PNG}
+    \caption{Chaîne de mesure du contenu d'un réservoir.}
+    \label{fig:Exercice_3_5_c}
 \end{figure}
 
 \begin{center}
-$R_1 = R_4 = R_0(1 + F \cdot K)$\\
-$R_2 = R_3 = R_0(1 - F \cdot K)$\\
+    $R_1 = R_4 = R_0(1 + F \cdot K)$\\
+    $R_2 = R_3 = R_0(1 - F \cdot K)$\\
 \end{center}
 
 Avec K = facteur de jauge et F = force appliquée.\\
@@ -592,18 +592,18 @@ On a étalonné la chaîne dans les 3 conditions suivantes :\\
 
 \begin {center}
 \begin{tabular}{llll}
-$U_b = 5V$ &	$T=25 \degree C$ &	$G_1 = 1015 digit/tonne$ &	$Of_1 = -55 digit$\\
-$U_b = 3V$ &	$T=25 \degree C$ &	$G_2 = 609 digit/tonne$ &	$Of_2 = -33 digit$\\
-$U_b = 5V$ &	$T=50 \degree C$ &	$G_3 = 1095 digit/tonne$ &	$Of_3 = +12 digit$\\
+    $U_b = 5V$ & $T=25 \degree C$ & $G_1 = 1015 digit/tonne$ & $Of_1 = -55 digit$ \\
+    $U_b = 3V$ & $T=25 \degree C$ & $G_2 = 609 digit/tonne$  & $Of_2 = -33 digit$ \\
+    $U_b = 5V$ & $T=50 \degree C$ & $G_3 = 1095 digit/tonne$ & $Of_3 = +12 digit$ \\
 \end{tabular}
 \end{center}
 ~\\
 On suppose les influences indépendantes et linéaires
 
 \begin{itemize}
-\item Calculer les coefficients d'influence de la température T et de l'alimentation $U_b$.
-\item Calculez le gain et l'offset pour une température $T=30 \degree C$ et une alimentation $U_b=5.5V$
-\item Enumérez les coefficients du moteur de correction IEEE1451
+    \item Calculer les coefficients d'influence de la température T et de l'alimentation $U_b$.
+    \item Calculez le gain et l'offset pour une température $T=30 \degree C$ et une alimentation $U_b=5.5V$
+    \item Enumérez les coefficients du moteur de correction IEEE1451
 \end{itemize}
 
 \subsection{Exercice: Mesures répétées}

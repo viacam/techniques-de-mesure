@@ -9,62 +9,62 @@ Dans un cas (corrélation totale, et en pratique très rare), on additionne les 
 
 Soit deux séries de $N$ mesures, $x_1$ et $x_2$. On aimerait connaitre le lien entre ces deux séries: est-ce que l'une va dépendre de l'autre ? Un peu, beaucoup, pas du tout ? L'outil de mesure quantitatif de ce lien est la \textbf{corrélation}, notée $\Gamma(x_1,x_2)$. Elle s'introduit à travers une autre quantité de l'analyse statistique, la \textbf{covariance}, généralisation de la notion de variance, vue au chapitre précédent. Elle est définie par la valeur moyenne du produit des écarts des VA à leur valeur moyenne:
 \begin{equation}
-\cov(x_1,x_2)\equiv\frac{1}{N}\sum\limits_{i=1}^{N}(x_1-\langle x_1\rangle)(x_2-\langle x_2\rangle)
-=\langle (x_1-\langle x_1\rangle)(x_2-\langle x_2\rangle)\rangle
-=\langle\Delta x_1\Delta x_2\rangle
-\label{eq:3-01}
+    \cov(x_1,x_2)\equiv\frac{1}{N}\sum\limits_{i=1}^{N}(x_1-\langle x_1\rangle)(x_2-\langle x_2\rangle)
+    =\langle (x_1-\langle x_1\rangle)(x_2-\langle x_2\rangle)\rangle
+    =\langle\Delta x_1\Delta x_2\rangle
+    \label{eq:3-01}
 \end{equation}
 Si, au long des mesures, les écarts $\Delta x_1$ sont plutôt du même signe, c.-à-d. si lorsque $\Delta x_1$ est positif (ou négatif), $\Delta x_2$ l'est aussi, cela nous indique que $x_1$ et $x_2$ ont tendance à varier dans le même sens, et $\cov(x_1,x_2)>0$. De manière inverse, si lorsque $\Delta x_1$ est positif (ou négatif), $\Delta x_2$ est plutôt du signe opposé, cela signifie que $x_1$ et $x_2$ ont tendance à varier de manière opposée, et $\cov(x_1,x_2)<0$. Finalement, si en moyenne les écarts $\Delta x_1$ et $\Delta x_2$ varient de manière totalement indépendante, alors il y aura autant de chances que $\Delta x_2$ et $\Delta x_1$ aient le même signe ou un signe opposé, et la covariance sera faible, voir nulle. A noter qu'en développant l'équation~\ref{eq:3-01}, on a aussi la formulation utile suivante:
 \begin{equation}
-\cov(x_1,x_2)=\langle x_1\, x_2\rangle-\langle x_1\rangle\langle x_2\rangle
-\label{eq:3-02}
+    \cov(x_1,x_2)=\langle x_1\, x_2\rangle-\langle x_1\rangle\langle x_2\rangle
+    \label{eq:3-02}
 \end{equation}
 
 Si le signe de la covariance est un indicateur du lien entre $x_1$ et $x_2$ on ne sait en revanche pas interpréter sa valeur absolue: si la covariance est grande, est-ce par ce que les écarts $\Delta x_i$ sont grands ou parce que le lien est fort ? Afin de s'affranchir de l'effet de l'amplitude propre aux VA, on normalise la covariance par l'écart-type des VA $x_1$ et $x_2$, ce qui détermine ce que l'on appelle la \textbf{corrélation}:
 \begin{equation}
-\Gamma(x_1,x_2)\equiv\frac{\cov(x_1,x_2)}{\sigma_{x_1}\sigma_{x_2}}
-=\frac{\langle\Delta x_1\Delta x_2\rangle}{\sigma_{x_1}\sigma_{x_2}}
+    \Gamma(x_1,x_2)\equiv\frac{\cov(x_1,x_2)}{\sigma_{x_1}\sigma_{x_2}}
+    =\frac{\langle\Delta x_1\Delta x_2\rangle}{\sigma_{x_1}\sigma_{x_2}}
 \end{equation}
 
 \subsection{Corrélation linéaire}
 
 \noindent\textbf{Dans le cas où $x_1$ et $x_2$ sont totalement dépendantes} l'une de l'autre, et de manière \textbf{linéaire}, c.-à-d. si
 $$
-x_2=ax_1+b
+    x_2=ax_1+b
 $$
 la corrélation est naturellement maximale. Il vient, avec~\ref{eq:3-02}, et la formule de la variance (chapitre 2),
 $$
-\cov(x_1,x_2)=\langle x_1(ax_1+b)\rangle-\langle x_1\rangle\langle(ax_1+b)\rangle
-=a\langle x_1^2\rangle+b\langle x_1\rangle-a\langle x_1\rangle^2-b\langle x_1\rangle
-=a\sigma_{x_1}^2
+    \cov(x_1,x_2)=\langle x_1(ax_1+b)\rangle-\langle x_1\rangle\langle(ax_1+b)\rangle
+    =a\langle x_1^2\rangle+b\langle x_1\rangle-a\langle x_1\rangle^2-b\langle x_1\rangle
+    =a\sigma_{x_1}^2
 $$
 de même
 \begin{align*}
-\sigma_{x_2}^2&=\langle x_2^2\rangle-\langle x_2\rangle^2=
-\langle (ax_1+b)^2\rangle-\langle (ax_1+b)\rangle^2\\
-&=a^2\langle x_1^2\rangle+2ab\langle x_1\rangle+b^2-a^2\langle x_1\rangle^2-2ab\langle x_1\rangle-b^2\\
-&=a^2\sigma_{x_1}^2
+    \sigma_{x_2}^2 & =\langle x_2^2\rangle-\langle x_2\rangle^2=
+    \langle (ax_1+b)^2\rangle-\langle (ax_1+b)\rangle^2                                                                   \\
+                   & =a^2\langle x_1^2\rangle+2ab\langle x_1\rangle+b^2-a^2\langle x_1\rangle^2-2ab\langle x_1\rangle-b^2 \\
+                   & =a^2\sigma_{x_1}^2
 \end{align*}
 d'où $\sigma_{x_2}=\pm a\sigma_{x_1}$. La corrélation est alors
 $$
-\Gamma(x_1,x_2)=\frac{a\,\sigma_{x_1}^2}{\pm a\,\sigma_{x_1}^2}=\pm 1
+    \Gamma(x_1,x_2)=\frac{a\,\sigma_{x_1}^2}{\pm a\,\sigma_{x_1}^2}=\pm 1
 $$
 On dit que $x_1$ et $x_2$ sont totalement corrélées si le signe est $+$, et totalement anti-corrélées si le signe est $-$. Attention ! anti-corrélée ne signifie pas que la corrélation est nulle ! mais simplement que $x_1$ et $x_2$ varient de manière opposée, en signe.
 
 \noindent\textbf{Dans le cas où $x_1$ et $x_2$ sont totalement indépendantes}, alors la covariance est nulle, et la corrélation aussi,
 $$
-\Gamma(x_1,x_2)=0
+    \Gamma(x_1,x_2)=0
 $$
 
 \subsection{Corrélation non linéaire}
 
 Dans le cas où les deux VA $x_1$ et $x_2$ dépendent l'une de l'autre à travers une relation non linéaire, alors il y a deux options pour examiner la corrélation:
 \begin{description}
-\item[Si la relation est linéarisable,] par exemple si $x_2=a\cos^2x_1+b$, alors on peut poser $z=\cos^2x_1$, d'où $x_2=az+b$, et examiner la corrélation entre $x_2$ et $z$.
-\item[Si la relation n'est pas linéarisable,] parce qu'elle est trop complexe, alors on utilisera une mesure de l'écart entre les mesures et le modèle $x_2=f(x_1)$, par exemple l'écart quadratique moyen entre $f(x_1)$ et $x_2$, normalisé par l'écart-type de $x_2$ et $x_1$ (mais on peut imaginer une autre méthode),
-$$
-q^2=\frac{\sum_{i=1}^{N}\left[x_{2,i}-f(x_{1,i})\right]^2}{N\sigma_{x_1}\sigma_{x_2}}
-$$
+    \item[Si la relation est linéarisable,] par exemple si $x_2=a\cos^2x_1+b$, alors on peut poser $z=\cos^2x_1$, d'où $x_2=az+b$, et examiner la corrélation entre $x_2$ et $z$.
+    \item[Si la relation n'est pas linéarisable,] parce qu'elle est trop complexe, alors on utilisera une mesure de l'écart entre les mesures et le modèle $x_2=f(x_1)$, par exemple l'écart quadratique moyen entre $f(x_1)$ et $x_2$, normalisé par l'écart-type de $x_2$ et $x_1$ (mais on peut imaginer une autre méthode),
+          $$
+              q^2=\frac{\sum_{i=1}^{N}\left[x_{2,i}-f(x_{1,i})\right]^2}{N\sigma_{x_1}\sigma_{x_2}}
+          $$
 \end{description}
 
 \section{Incertitude globale sur $G(x_1,x_2,\dots)$ et corrélation des variables internes}
@@ -75,53 +75,53 @@ $$
 
 Soit donc une variation infinitésimale $\text{d}x_1,\text{d}x_2,\dots$ des VA interne $x_1,x_2,\dots$. La variation infinitésimale correspondante $\text{d}G$ sera donnée par la somme du produit des dérivées partielles de $G$ et des variations des VA internes,
 \begin{equation}
-\text{d} G=\frac{\partial G}{\partial x_1}\,\text{d} x_{1}
-+\frac{\partial G}{\partial x_2}\,\text{d} x_{2}+\cdots
-=\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\,\text{d} x_{k}
-\label{eq:eddp}
+    \text{d} G=\frac{\partial G}{\partial x_1}\,\text{d} x_{1}
+    +\frac{\partial G}{\partial x_2}\,\text{d} x_{2}+\cdots
+    =\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\,\text{d} x_{k}
+    \label{eq:eddp}
 \end{equation}
 Considérons alors une mesure (une seule, de numéro $i$) de toutes les VA internes $\vec{x}=x_1,x_2,\dots$ (on utilise une notation de vecteurs pour simplifier), que l'on va écrire $\vec{x}_i$. L'écart entre la mesure $\vec{x}_i$ et la moyenne de $\vec{x}$ constitue l'erreur sur les VA $\Delta\vec{x}_i=\vec{x}_i-\langle\vec{x}\rangle$, qui n'est, en général, jamais nulle.
 
 Si l'erreur n'est pas trop grande, alors on peut identifier $\Delta\vec{x}_i$ à $\text{d}\vec{x}$ et utiliser la formule~\ref{eq:eddp} pour calculer l'erreur $\Delta G_i$ engendrée par les erreurs sur $\vec{x}$,
 \begin{equation}
-\Delta G_i=\frac{\partial G}{\partial x_1}\Delta x_{1,i}
-+\frac{\partial G}{\partial x_2}\Delta x_{2,i}+\cdots
-=\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\Delta x_{k,i}=\vec{\nabla} G\cdot\Delta\vec{x}_i
+    \Delta G_i=\frac{\partial G}{\partial x_1}\Delta x_{1,i}
+    +\frac{\partial G}{\partial x_2}\Delta x_{2,i}+\cdots
+    =\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\Delta x_{k,i}=\vec{\nabla} G\cdot\Delta\vec{x}_i
 \end{equation}
 où $M$ est le nombre de VA internes, et le vecteur $\vec{\nabla} G$ n'est que la suite des dérivées partielles de $G$ par rapport à chacun de ses composantes, que l'on appelle le \textbf{gradient} de $G$.
 
 \textbf{En moyenne}, l'erreur $\Delta G_i$ sur $G$ est nulle. Si ce n'est pas le cas, c'est qu'il existe une erreur systématique dans la mesure, et ceci sort du cadre de cette analyse. Supposons donc que les erreurs sur $\vec{x}$ sont nulles en moyenne, c.-à-d. que $\langle\Delta\vec{x}\rangle=0$, il vient alors naturellement que $\langle\Delta G\rangle=0$. Par conséquent, ce que nous allons devoir considérer, pour caractériser l'erreur sur $G$, sera l'écart-type de  $\Delta G$, $\sigma_{\Delta G}$, que l'on calcule à partir de la variance $\sigma_{\Delta G}^2$, et que nous développons ci-dessous.
 \begin{align*}
-\sigma_{\Delta G}^2=&\langle\Delta G^2\rangle-\langle\Delta G\rangle^2=
-\langle\Delta G^2\rangle\\
-=&\left\langle\left(\vec{\nabla} G\cdot\Delta\vec{x}\right)^2\right\rangle=\left\langle\left(\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\Delta x_{k,i}\right)^2\right\rangle\\
-=&\left\langle\left(\sum\limits_{m=1}^{M}\frac{\partial G}{\partial x_m}\Delta x_{m,i}\right)\left(\sum\limits_{n=1}^{M}\frac{\partial G}{\partial x_n}\Delta x_{n,i}\right)\right\rangle\\
-=&\left\langle\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\left(\Delta x_{k,i}\right)^2\right\rangle+2\left\langle\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\Delta x_{m,i}\frac{\partial G}{\partial x_n}\Delta x_{n,i}\right\rangle\\
-=&\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\langle\left(\Delta x_{k,i}\right)^2\rangle+2\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\frac{\partial G}{\partial x_n}\langle\Delta x_{m,i}\Delta x_{n,i}\rangle
+    \sigma_{\Delta G}^2= & \langle\Delta G^2\rangle-\langle\Delta G\rangle^2=
+    \langle\Delta G^2\rangle                                                                                                                                                                                                                                                                                          \\
+    =                    & \left\langle\left(\vec{\nabla} G\cdot\Delta\vec{x}\right)^2\right\rangle=\left\langle\left(\sum\limits_{k=1}^{M}\frac{\partial G}{\partial x_k}\Delta x_{k,i}\right)^2\right\rangle                                                                                                        \\
+    =                    & \left\langle\left(\sum\limits_{m=1}^{M}\frac{\partial G}{\partial x_m}\Delta x_{m,i}\right)\left(\sum\limits_{n=1}^{M}\frac{\partial G}{\partial x_n}\Delta x_{n,i}\right)\right\rangle                                                                                                    \\
+    =                    & \left\langle\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\left(\Delta x_{k,i}\right)^2\right\rangle+2\left\langle\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\Delta x_{m,i}\frac{\partial G}{\partial x_n}\Delta x_{n,i}\right\rangle \\
+    =                    & \sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\langle\left(\Delta x_{k,i}\right)^2\rangle+2\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\frac{\partial G}{\partial x_n}\langle\Delta x_{m,i}\Delta x_{n,i}\rangle
 \end{align*}
 c.-à-d. que l'on trouve le \textbf{résultat fondamental que la variance de l'erreur sur $G$ est égale à la somme de la contribution des variances de chaque VA interne}, plus un terme fonction de la covariance entre les VA internes:
 \begin{equation}
-\boxed{\sigma^2_{\Delta G}=\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\sigma_{x_k}^2
-+2\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\frac{\partial G}{\partial x_n}\cov(x_n,x_m)}
-\label{eq:sdg2}
+    \boxed{\sigma^2_{\Delta G}=\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\sigma_{x_k}^2
+    +2\sum\limits_{m=1}^{M}\sum\limits_{n=m+1}^{M}\frac{\partial G}{\partial x_m}\frac{\partial G}{\partial x_n}\cov(x_n,x_m)}
+    \label{eq:sdg2}
 \end{equation}
 
 \begin{center}
-\bf Oubliez donc à tout jamais la formule de l'addition simple des erreurs ! cela ne se présente que pour les cas où les erreurs des éléments internes du système sont coordonnées, ce qui ne se réalise pratiquement jamais ! Il faut, et toujours, utiliser l'addition QUADRATIQUE des erreurs.
+    \bf Oubliez donc à tout jamais la formule de l'addition simple des erreurs ! cela ne se présente que pour les cas où les erreurs des éléments internes du système sont coordonnées, ce qui ne se réalise pratiquement jamais ! Il faut, et toujours, utiliser l'addition QUADRATIQUE des erreurs.
 \end{center}
 
 \subsection{Variables internes indépendantes}
 
 Dans le cas très fréquent en pratique où les VA internes sont indépendantes, les covariances croisées sont nulles, par conséquent
 \begin{equation}
-\sigma^2_G=\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\sigma_{x_k}^2
-\label{eq:vardlcolvisd}
+    \sigma^2_G=\sum\limits_{k=1}^{M}\left(\frac{\partial G}{\partial x_k}\right)^2\sigma_{x_k}^2
+    \label{eq:vardlcolvisd}
 \end{equation}
 on obtient alors que la variance totale est la somme des contributions des variances de chaque VA.
 \begin{center}
-\bf
-dans le cas de VA internes indépendantes, les variances\\
-des erreurs dues à chaque VA s'additionnent
+    \bf
+    dans le cas de VA internes indépendantes, les variances\\
+    des erreurs dues à chaque VA s'additionnent
 \end{center}
 
 \subsection{En pratique}
@@ -134,21 +134,21 @@ On pourra alors soit poser que $\sigma^2_{\Delta G}=33$ mV dans l'équation~\ref
 
 On désire déterminer la focale d'une combinaison de deux lentilles minces, séparées d'une distance $e=200$ mm, et de focales $f_1=100$ mm et $f_2=-50$ mm. On peut montrer que la focale totale est donnée par
 $$
-f_t=\frac{f_1\,f_2}{f_1+f_2-e}
+    f_t=\frac{f_1\,f_2}{f_1+f_2-e}
 $$
 Calculer l'incertitude sur $f_t$, sachant que les incertitudes sur les variables internes sont $\Delta f_1=0.1$ mm, $\Delta f_2=0.1$ mm et $\Delta e=0.2$ mm.
 
 Il est absolument évident qu'il n'y a aucune raison que les incertitudes sur les deux focales et sur la distance entre les lentilles soient corrélées. Par conséquent, il faudra utiliser la formule~\ref{eq:vardlcolvisd} de l'addition quadratique des erreurs. Calculons les dérivées de $f_t$ par rapport aux trois variables internes. Il vient
 \begin{gather*}
-\frac{\partial f_t}{\partial f_1}=\frac{f_2(f_1+f_2-e)-f_1f_2}{(f_1+f_2-e)^2}=
-\frac{f_2(f_2-e)}{(f_1+f_2-e)^2}=1\\
-\frac{\partial f_t}{\partial f_2}=\frac{f_1(f_1+f_2-e)-f_1f_2}{(f_1+f_2-e)^2}=
-\frac{f_1(f_1-e)}{(f_1+f_2-e)^2}=-0.5\\
-\frac{\partial f_t}{\partial e}=\frac{f_1f_2}{(f_1+f_2-e)^2}=-0.5
+    \frac{\partial f_t}{\partial f_1}=\frac{f_2(f_1+f_2-e)-f_1f_2}{(f_1+f_2-e)^2}=
+    \frac{f_2(f_2-e)}{(f_1+f_2-e)^2}=1\\
+    \frac{\partial f_t}{\partial f_2}=\frac{f_1(f_1+f_2-e)-f_1f_2}{(f_1+f_2-e)^2}=
+    \frac{f_1(f_1-e)}{(f_1+f_2-e)^2}=-0.5\\
+    \frac{\partial f_t}{\partial e}=\frac{f_1f_2}{(f_1+f_2-e)^2}=-0.5
 \end{gather*}
 par conséquent
 $$
-(\Delta f_t)^2=(\Delta f_1)^2+(-0.5)^2(\Delta f_2)^2+(-0.5)^2(\Delta e)^2=0.0225\ \text{mm}^2
+    (\Delta f_t)^2=(\Delta f_1)^2+(-0.5)^2(\Delta f_2)^2+(-0.5)^2(\Delta e)^2=0.0225\ \text{mm}^2
 $$
 d'où $\Delta f_t=0.15$ mm.
 
@@ -156,7 +156,7 @@ d'où $\Delta f_t=0.15$ mm.
 
 Dans ce cas (très rare en pratique), on trouve que les erreurs s'additionnent de manière simple, c.-à-d. que
 \begin{equation}
-\sigma_G=\sum\limits_{k=1}^{M}\left|\frac{\partial G}{\partial x_k}\right|\sigma_{x_k}
+    \sigma_G=\sum\limits_{k=1}^{M}\left|\frac{\partial G}{\partial x_k}\right|\sigma_{x_k}
 \end{equation}
 ce n'est donc que dans le cas d'une corrélation totale entre les VA internes qu'il est légitime d'additionner de manière simple les contributions individuelles. Mais ce cas, encore une fois, est \textbf{exceptionnel}.
 
@@ -166,31 +166,31 @@ Notez encore qu'utiliser la somme simple en lieu et place de la somme quadratiqu
 
 Considérons le cas où la fonction $G$ consiste en l'addition et/ou soustraction de VA indépendantes, par exemple
 \begin{equation}
-G(x_1,x_2,\cdots,x_n)=x_1-x_2+\cdots-x_n
+    G(x_1,x_2,\cdots,x_n)=x_1-x_2+\cdots-x_n
 \end{equation}
 alors en vertu de l'équation~(\ref{eq:vardlcolvisd}), la variance de $G$ sera donnée par
 \begin{equation}
-\sigma^2_G=\sigma_{x_1}^2+\sigma_{x_2}^2+\cdots+\sigma_{x_n}^2
+    \sigma^2_G=\sigma_{x_1}^2+\sigma_{x_2}^2+\cdots+\sigma_{x_n}^2
 \end{equation}
 où on voit bien que les variances individuelles s'additionnent \textbf{toujours} et ne se soustraient \textbf{jamais}, même si les VA apparaissent en soustraction dans la relation avec $G$.
 
 Considérons ensuite le cas où la fonction $G$ consiste un produit et/ou quotient de VA indépendantes, par exemple
 \begin{equation}
-G(x_1,x_2,x_3)=\frac{x_1}{x_2\,x_3}
+    G(x_1,x_2,x_3)=\frac{x_1}{x_2\,x_3}
 \end{equation}
 le calcul est plus compliqué, mais on verra que le résultat est très simple: appliquons l'équation~(\ref{eq:vardlcolvisd}), il vient
 \begin{equation}
-\sigma^2_G=
-\frac{1}{x_2^2x_3^2}\,\sigma_{x1}^2+
-\frac{x_1^2}{x_2^4x_3^2}\,\sigma_{x2}^2+
-\frac{x_1^2}{x_2^2x_3^4}\,\sigma_{x3}^2
+    \sigma^2_G=
+    \frac{1}{x_2^2x_3^2}\,\sigma_{x1}^2+
+    \frac{x_1^2}{x_2^4x_3^2}\,\sigma_{x2}^2+
+    \frac{x_1^2}{x_2^2x_3^4}\,\sigma_{x3}^2
 \end{equation}
 ce qui semble compliqué, mais si on divise par $G^2$, il vient
 \begin{equation}
-\frac{\sigma^2_G}{G^2}=
-\frac{\sigma_{x1}^2}{x_1^2}+
-\frac{\sigma_{x2}^2}{x_2^2}+
-\frac{\sigma_{x3}^2}{x_3^2}
+    \frac{\sigma^2_G}{G^2}=
+    \frac{\sigma_{x1}^2}{x_1^2}+
+    \frac{\sigma_{x2}^2}{x_2^2}+
+    \frac{\sigma_{x3}^2}{x_3^2}
 \end{equation}
 on trouve alors que dans le cas d'un produit ou quotient de VA, l'erreur \textbf{relative} est la somme quadratique des erreurs relatives sur les VA indépendantes individuelles.
 
@@ -200,8 +200,8 @@ on trouve alors que dans le cas d'un produit ou quotient de VA, l'erreur \textbf
 
 Lors de la conception d'une machine quelconque - ici au sens de système physique mécanique, électrique, optique, etc. - l'ingénieur se base au moins sur deux spécifications pour le design:
 \begin{description}
-\item[les caractéristiques] de la machine à construire, c.-à-d. ce qu'elle doit fournir par exemple comme couple, tension, luminosité, etc.
-\item[la précision] avec laquelle la machine doit fournir les caractéristiques demandées.
+    \item[les caractéristiques] de la machine à construire, c.-à-d. ce qu'elle doit fournir par exemple comme couple, tension, luminosité, etc.
+    \item[la précision] avec laquelle la machine doit fournir les caractéristiques demandées.
 \end{description}
 Cette précision est normalement indiquée par un chiffre représentant une erreur à ne pas dépasser, ou par un intervalle autour de la caractéristique spécifiée, dont il ne faut pas sortir. \textbf{Cette spécification de précision est fondamentale et guide les choix de l'ingénieur en conception.} On l'appelle aussi très souvent le \textbf{budget d'erreur}, dans le sens où on fournit à l'ingénieur un budget pour l'erreur totale, et ce dernier devra choisir les composantes internes de la machine de manière à ce que l'accumulation des erreurs générées par chaque composant, ou à chaque étape de la conception (usinage, etc.) ne dépasse pas le budget alloué.
 
@@ -211,7 +211,7 @@ Soit à usiner un axe en acier à un diamètre de 20 mm avec une précision de 0
 
 Cela fait au moins 3 sources d'erreur. \textbf{Puisque ces erreurs sont forcément indépendantes, on doit considérer une addition quadratique des erreurs}. On aura donc
 $$
-\text{erreur pos. burin}^2+\text{erreur dépl. burin}^2+\text{erreur mesure}\le0.01^2
+    \text{erreur pos. burin}^2+\text{erreur dépl. burin}^2+\text{erreur mesure}\le0.01^2
 $$
 Ce sera le rôle de l'ingénieur de concevoir la chaine de production de manière à ce que le budget d'erreur ci-dessus soit respecté.
 
@@ -219,11 +219,11 @@ Ce sera le rôle de l'ingénieur de concevoir la chaine de production de manièr
 
 On doit concevoir un télescope a 3 miroirs, dont l'écart-type de l'erreur de surface ne doit pas dépasser 50 nm. Comme les usinages des trois miroirs sont réalisés de manière indépendante, il n'y a aucune raison que les erreurs des miroirs soient corrélées. On aura donc
 $$
-\text{erreur $M_1$}^2+\text{erreur $M_2$}^2+\text{erreur $M_3$}\le 50^2=2500\ \text{nm}^2
+    \text{erreur $M_1$}^2+\text{erreur $M_2$}^2+\text{erreur $M_3$}\le 50^2=2500\ \text{nm}^2
 $$
 En distribuant de manière identique sur les trois termes, on aura que
 $$
-\text{erreur $M_1$}=\text{erreur $M_2$}=\text{erreur $M_3$}\le \sqrt{2500/3}=28.9\ \text{nm}
+    \text{erreur $M_1$}=\text{erreur $M_2$}=\text{erreur $M_3$}\le \sqrt{2500/3}=28.9\ \text{nm}
 $$
 
 En toute généralité, on devra tenir compte du facteur de sensibilité $\left(\frac{\partial G}{\partial x_k}\right)^2\sigma_{x_k}^2$, comme nous l'avons fait pour l'exemple du système à deux lentilles de la page~\pageref{sec:exopt}. Dans les exemples ci-dessus, le facteur était toujours égal à 1, mais cela ne représente pas le cas général.
@@ -235,25 +235,25 @@ En toute généralité, on devra tenir compte du facteur de sensibilité $\left(
 %----------
 
 \begin{center}
-\Large \bf {\underline{Pour faire ces exercices, utilisez \texttt{matlab}}}
+    \Large \bf {\underline{Pour faire ces exercices, utilisez \texttt{matlab}}}
 \end{center}
 
 \subsection*{Exercice 8.1 - expressions analytiques de la propagation d'incertitude}
 
 Déterminez les expressions analytiques de l'incertitude pour les grandeurs suivantes, et fonction de l'incertitude sur les membres de droite des équations, sauf pour les constantes suivantes supposées parfaitement connues, $h$, $c$, $k$, $P_0$, $n_1$, $n_2$.
 \begin{description}\renewcommand{\labelitemi}{$\bullet$}
-\item[loi d'Ohm] $U=R\,I$, calculez $\Delta U$ en fonction de $R$, $\Delta R$, $I$ et $\Delta I$.
-\item[Energie du photon] $E=h\,c/\lambda$. Donnez $\Delta E$ en fonction de $\lambda$ et $\Delta\lambda$.
-\item[Période d'oscillation masse et ressort] $T=2\pi\sqrt{m/k}$. Calculez $\Delta T$ en fonction de $m$ et $\Delta m$.
-\item[Décibels et puissance] $dB=20\log{P/P_0}$. Calculez $\Delta dB$ en fonction de $\Delta P$ et de $P$.
-\item[Loi de Snell (optique)] $n_2\sin{\theta_2}=n_1\sin{\theta_1}$. Calculez $\Delta\theta_2$ en fonction de $\theta_1$ et $\Delta\theta_1$.
+    \item[loi d'Ohm] $U=R\,I$, calculez $\Delta U$ en fonction de $R$, $\Delta R$, $I$ et $\Delta I$.
+    \item[Energie du photon] $E=h\,c/\lambda$. Donnez $\Delta E$ en fonction de $\lambda$ et $\Delta\lambda$.
+    \item[Période d'oscillation masse et ressort] $T=2\pi\sqrt{m/k}$. Calculez $\Delta T$ en fonction de $m$ et $\Delta m$.
+    \item[Décibels et puissance] $dB=20\log{P/P_0}$. Calculez $\Delta dB$ en fonction de $\Delta P$ et de $P$.
+    \item[Loi de Snell (optique)] $n_2\sin{\theta_2}=n_1\sin{\theta_1}$. Calculez $\Delta\theta_2$ en fonction de $\theta_1$ et $\Delta\theta_1$.
 \end{description}
 
 \subsection*{Exercice 8.2 - propagation d'incertitude, un cas pratique: indice de réfraction dans l'atmosphère terrestre}
 
 L'indice de réfraction $n$ d'un gaz (ici l'air) est relié à sa pression $P$ et température absolue $T$ par la loi suivante:
 $$
-n-1=\alpha\,\frac{P}{T}
+    n-1=\alpha\,\frac{P}{T}
 $$
 où $\alpha=80\times10^{-6}$ [K$\cdot$m$^2$/N] pour l'air en unités SI. La mesure de la température et de la pression en atmosphère libre au sommet du volcan Mauna Kea, Hawaii (USA) a fourni les valeurs suivantes, $T=276.5\pm0.3$ K et $P=616\pm10$ mb. Transformez le pression en unités SI, et calculez l'incertitude sur $N=n-1$ due à l'incertitude sur $T$ et $P$.
 
@@ -261,12 +261,12 @@ où $\alpha=80\times10^{-6}$ [K$\cdot$m$^2$/N] pour l'air en unités SI. La mesu
 
 On veut usiner un alésage avec une précision de 10 $\mu$m sur le diamètre. Les grandeurs d'influence, ainsi que leur incertitudes, sont les suivantes
 \begin{center}
-\begin{tabular}{r|r}
-positionnement de la pièce par rapport au zéro de la machine-outil & 3 $\mu$m \\
-positionnement de l'outil de coupe par rapport à la pièce & 1.5 $\mu$m \\
-erreur de positionnement de l'outil de coupe lors du déplacement & 0.8 $\mu$m \\
-erreur sur le diamètre de l'outil de coupe & 2 $\mu$m
-\end{tabular}
+    \begin{tabular}{r|r}
+        positionnement de la pièce par rapport au zéro de la machine-outil & 3 $\mu$m   \\
+        positionnement de l'outil de coupe par rapport à la pièce          & 1.5 $\mu$m \\
+        erreur de positionnement de l'outil de coupe lors du déplacement   & 0.8 $\mu$m \\
+        erreur sur le diamètre de l'outil de coupe                         & 2 $\mu$m
+    \end{tabular}
 \end{center}
 Calculez l'incertitude finale sur le diamètre de l'alésage.
 
@@ -274,9 +274,9 @@ Calculez l'incertitude finale sur le diamètre de l'alésage.
 
 Pour les fonctions $f(x,y)$ ci-dessous, liant les variables aléatoires $x$ et $y$, calculer l'incertitude $\Delta f$ en fonction des incertitudes $\Delta x$ et $\Delta y$, dans le cas où $x$ et $y$ sont \underline{totalement corrélées}, et dans le cas où $x$ et $y$ sont \underline{indépendantes}.
 \begin{eqnarray*}
-f(x,y)&=&\sin(x)+\cos(x) \\
-f(x,y)&=&\ln\left(\frac{y}{x}\right) \\
-f(x,y)&=&\frac{x^2}{1+xy} \\
-f(x,y)&=&\exp(x^2-y^2) \\
-f(x,y)&=&x^3/y^2 \\
+    f(x,y)&=&\sin(x)+\cos(x) \\
+    f(x,y)&=&\ln\left(\frac{y}{x}\right) \\
+    f(x,y)&=&\frac{x^2}{1+xy} \\
+    f(x,y)&=&\exp(x^2-y^2) \\
+    f(x,y)&=&x^3/y^2 \\
 \end{eqnarray*}

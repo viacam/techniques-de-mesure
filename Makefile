@@ -2,11 +2,18 @@ PWD!=pwd | sed 's/^\/mnt//'
 DOCKER=docker run -it -v "$(PWD):/srv" -w=/srv nowox/latex:1.1
 
 VSDXs=$(shell ls assets/visio/*.vsdx)
+TEXs=$(wildcard src/*.tex)
 SVGS=$(patsubst assets/visio/%.vsdx,assets/figures/%.svg,$(VSDXs))
 PDFS=$(patsubst assets/figures/%.svg,assets/figures/%.pdf,$(SVGS))
 
 all: revision.tex
 	$(DOCKER) latexmk -pdf -xelatex main.tex
+
+tidy: $(TEXs)
+	latexindent $^
+
+console:
+	$(DOCKER) /bin/bash
 
 clean:
 	$(DOCKER) latexmk -C

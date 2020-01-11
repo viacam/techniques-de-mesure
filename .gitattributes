@@ -1,0 +1,3 @@
+*.tex text=auto
+*.vbs eol=crlf
+*.bat eol=crlf

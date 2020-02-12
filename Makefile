@@ -1,6 +1,5 @@
-PWD!=pwd | sed 's/^\/mnt//'
-DOCKER=docker run -it -v "$(PWD):/srv" -w=/srv nowox/latex:1.1
-
+PWD!=pwd -P | sed 's/^\/mnt//'
+DOCKER=docker run -it -v '$(PWD):/srv' -w=/srv nowox/latex:1.1
 VSDXs=$(shell ls assets/visio/*.vsdx)
 TEXs=$(wildcard src/*.tex)
 SVGS=$(patsubst assets/visio/%.vsdx,assets/figures/%.svg,$(VSDXs))
